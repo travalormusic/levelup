@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Travalor — Before Our Call</title>
+<meta name="robots" content="noindex" /><!-- this page is only for booked artists -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root{--ink:#130D1A;--ink-2:#1B1326;--surface:#241932;--paper:#F1ECF6;--muted:#A99BB8;--muted-2:#6E607E;
+    --violet:#8A3FD1;--violet-soft:#B583E6;--violet-deep:#2A1640;--gold:#E9A23B;--gold-soft:#F0BD6E;--line:rgba(241,236,246,0.12);
+    --display:"Playfair Display",Georgia,serif;--body:"Open Sans",system-ui,sans-serif;--mono:"Space Mono",ui-monospace,monospace;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--ink);color:var(--paper);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased;
+    min-height:100vh;display:flex;align-items:center;justify-content:center;padding:28px}
+  ::selection{background:var(--gold);color:var(--ink)}
+  .card{width:100%;max-width:600px;background:var(--ink-2);border:1px solid var(--line);border-radius:12px;padding:2.6rem 2.2rem}
+  .brand{font-family:var(--display);font-weight:600;font-size:1.2rem;text-align:center;margin-bottom:1.6rem}
+  .brand span{color:var(--violet-soft)}
+  .plate{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+  .progress{display:flex;gap:6px;margin:1.4rem 0 1.8rem}
+  .progress i{flex:1;height:3px;background:var(--line);border-radius:2px;transition:background .3s}
+  .progress i.on{background:var(--gold)}
+  .intro{text-align:center;margin-bottom:1.6rem}
+  .intro h1{font-family:var(--display);font-weight:600;font-size:clamp(1.5rem,4vw,2rem);margin:.4rem 0 .6rem}
+  .intro p{color:var(--muted);font-size:.96rem;max-width:46ch;margin:0 auto}
+  .qstep{display:none}.qstep.active{display:block;animation:fade .35s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .qlabel{font-family:var(--display);font-size:1.35rem;font-weight:600;margin-bottom:.35rem}
+  .qhint{color:var(--muted);font-size:.9rem;margin-bottom:1.3rem}
+  .field{width:100%;background:var(--surface);border:1px solid var(--line);border-radius:6px;color:var(--paper);font-family:var(--body);font-size:1.02rem;padding:.9em 1em;outline:none;transition:border .2s}
+  .field:focus{border-color:var(--violet-soft)}
+  textarea.field{min-height:110px;resize:vertical}
+  .opts{display:flex;flex-direction:column;gap:10px}
+  .opt{text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:8px;color:var(--paper);padding:1em 1.1em;font-family:var(--body);font-size:1rem;cursor:pointer;transition:border .2s,background .2s}
+  .opt:hover,.opt.sel{border-color:var(--gold);background:rgba(233,162,59,.08)}
+  .opt small{display:block;color:var(--muted);font-size:.82rem;margin-top:.25rem}
+  .nav{display:flex;justify-content:space-between;align-items:center;margin-top:1.8rem}
+  .back{background:none;border:none;color:var(--muted);font-family:var(--mono);font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+  .back:hover{color:var(--paper)}
+  .btn{display:inline-flex;align-items:center;gap:.5em;font-family:var(--body);font-weight:700;font-size:1rem;padding:.95em 1.7em;border-radius:5px;background:var(--gold);color:var(--ink);border:none;cursor:pointer;transition:transform .2s}
+  .btn:hover{transform:translateY(-2px)}
+  .err{color:var(--gold-soft);font-family:var(--mono);font-size:.74rem;margin-top:.6rem;min-height:1em}
+  .done{text-align:center;display:none}
+  .done.show{display:block;animation:fade .4s ease}
+  .done .tick{width:64px;height:64px;border-radius:50%;background:rgba(233,162,59,.16);color:var(--gold);font-size:1.8rem;display:grid;place-items:center;margin:0 auto 1.2rem}
+  .done h2{font-family:var(--display);font-weight:600;font-size:1.6rem;margin-bottom:.7rem}
+  .done p{color:var(--muted);max-width:42ch;margin:0 auto}
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="brand"><img src="logo.png" alt="Travalor" style="height:30px;width:auto" /></div>
+
+    <div id="flow">
+      <div class="intro">
+        <span class="plate">You're booked</span>
+        <h1>Before our call…</h1>
+        <p>Give me a few minutes of context so our session is actually useful — not 30 minutes of me catching up. Six quick questions.</p>
+      </div>
+      <div class="progress" id="prog"></div>
+
+      <form id="prep" novalidate>
+        <!-- 1: stage name (warm opener) -->
+        <div class="qstep active" data-step="0">
+          <p class="qlabel">What name do you go by as an artist?</p>
+          <p class="qhint">Your stage / artist name — so I can check out your stuff before we talk.</p>
+          <input class="field" id="q_stage" type="text" placeholder="Artist / stage name" />
+          <div class="err" id="er0"></div>
+        </div>
+
+        <!-- 2: full/part/hobby qualification -->
+        <div class="qstep" data-step="1">
+          <p class="qlabel">Where are you with music right now?</p>
+          <p class="qhint">No wrong answer — it just helps me meet you where you are.</p>
+          <div class="opts" id="opts_status">
+            <button type="button" class="opt" data-val="Full-time">Full-time<small>Music is how I make my living</small></button>
+            <button type="button" class="opt" data-val="Part-time">Part-time<small>I work a job that funds my music</small></button>
+            <button type="button" class="opt" data-val="Getting serious">Getting serious<small>Ready to start investing properly</small></button>
+            <button type="button" class="opt" data-val="Hobby">Hobby / just starting<small>Haven't really invested in it yet</small></button>
+          </div>
+          <div class="err" id="er1"></div>
+        </div>
+
+        <!-- 3: goals -->
+        <div class="qstep" data-step="2">
+          <p class="qlabel">What do you want to achieve in the next 6–12 months?</p>
+          <p class="qhint">An EP? Your first proper release? Booking shows? Be honest.</p>
+          <textarea class="field" id="q_goals" placeholder="What success looks like for you…"></textarea>
+          <div class="err" id="er2"></div>
+        </div>
+
+        <!-- 4: experience / what's gone wrong -->
+        <div class="qstep" data-step="3">
+          <p class="qlabel">Tell me about your experience so far.</p>
+          <p class="qhint">What's worked, what hasn't, and anything that's frustrated you with past producers.</p>
+          <textarea class="field" id="q_exp" placeholder="Your story so far…"></textarea>
+          <div class="err" id="er3"></div>
+        </div>
+
+        <!-- 5: sound + references -->
+        <div class="qstep" data-step="4">
+          <p class="qlabel">Your sound &amp; 2–3 reference artists.</p>
+          <p class="qhint">Genre plus the artists whose sound you'd love yours to live next to.</p>
+          <textarea class="field" id="q_refs" placeholder="e.g. dark R&B — The Weeknd, Brent Faiyaz, dvsn…"></textarea>
+          <div class="err" id="er4"></div>
+        </div>
+
+        <!-- 6: investment readiness (tactful qualification) -->
+        <div class="qstep" data-step="5">
+          <p class="qlabel">Where are you with investing in this project?</p>
+          <p class="qhint">Quality production is a real commitment — this just tells me how to help.</p>
+          <div class="opts" id="opts_invest">
+            <button type="button" class="opt" data-val="Budgeted & ready">I've budgeted and I'm ready to invest</button>
+            <button type="button" class="opt" data-val="Planning soon">I'm planning to invest in the next month or two</button>
+            <button type="button" class="opt" data-val="Exploring">I'm exploring and not sure on budget yet</button>
+          </div>
+          <div class="err" id="er5"></div>
+        </div>
+
+        <!-- 7: anything else (optional) -->
+        <div class="qstep" data-step="6">
+          <p class="qlabel">Anything else I should know?</p>
+          <p class="qhint">Optional — links to your music, deadlines, whatever's on your mind.</p>
+          <textarea class="field" id="q_extra" placeholder="Optional…"></textarea>
+          <div class="err" id="er6"></div>
+        </div>
+
+        <div class="nav">
+          <button type="button" class="back" id="backBtn" style="visibility:hidden">← Back</button>
+          <button type="button" class="btn" id="nextBtn">Continue →</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="done" id="done">
+      <div class="tick">✓</div>
+      <h2>All set — thank you.</h2>
+      <p>I've got everything I need to make our call count. Talk soon — and remember to accept your calendar invite if you haven't yet.</p>
+    </div>
+  </div>
+
+<script>
+  function track(n,p){try{if(window.gtag)gtag('event',n,p||{});}catch(e){}}
+  var step=0,total=7,status='',invest='';
+  var steps=document.querySelectorAll('.qstep');
+  var prog=document.getElementById('prog');
+  for(var i=0;i<total;i++){var b=document.createElement('i');if(i===0)b.className='on';prog.appendChild(b);}
+  var bars=prog.children;
+  var nextBtn=document.getElementById('nextBtn'),backBtn=document.getElementById('backBtn');
+  function val(id){return document.getElementById(id).value.trim();}
+
+  document.querySelectorAll('#opts_status .opt').forEach(function(o){o.addEventListener('click',function(){selOpt('opts_status',o);status=o.dataset.val;document.getElementById('er1').textContent='';});});
+  document.querySelectorAll('#opts_invest .opt').forEach(function(o){o.addEventListener('click',function(){selOpt('opts_invest',o);invest=o.dataset.val;document.getElementById('er5').textContent='';});});
+  function selOpt(group,el){document.querySelectorAll('#'+group+' .opt').forEach(function(x){x.classList.remove('sel');});el.classList.add('sel');}
+
+  function show(n){
+    steps.forEach(function(s){s.classList.toggle('active',+s.dataset.step===n);});
+    for(var i=0;i<total;i++){bars[i].classList.toggle('on',i<=n);}
+    backBtn.style.visibility=n===0?'hidden':'visible';
+    nextBtn.textContent=n===total-1?'Submit ✓':'Continue →';
+    var f=steps[n].querySelector('input,textarea');if(f)setTimeout(function(){f.focus();},60);
+  }
+  function validate(n){
+    var e=document.getElementById('er'+n);e.textContent='';
+    if(n===0&&!val('q_stage')){e.textContent='What should I call you as an artist?';return false;}
+    if(n===1&&!status){e.textContent='Pick the one that fits best.';return false;}
+    if(n===2&&!val('q_goals')){e.textContent='Even a sentence helps.';return false;}
+    if(n===3&&!val('q_exp')){e.textContent='Even a sentence helps.';return false;}
+    if(n===4&&!val('q_refs')){e.textContent='Drop a genre and a couple of names.';return false;}
+    if(n===5&&!invest){e.textContent='Pick the one that fits best.';return false;}
+    return true; /* step 6 optional */
+  }
+  function payload(){return {stageName:val('q_stage'),status:status,goals:val('q_goals'),experience:val('q_exp'),referenceSound:val('q_refs'),investment:invest,extra:val('q_extra')};}
+
+  nextBtn.addEventListener('click',function(){
+    if(!validate(step))return;
+    track('prep_step',{step:step});
+    if(step<total-1){step++;show(step);}
+    else{
+      /* ▸ EDIT LEAD ENDPOINT — POST the pre-consult answers to your webhook / CRM (match on email if you pass it through). */
+      /* fetch('https://YOUR-ENDPOINT',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload())}); */
+      track('prep_complete',{status:status,investment:invest});
+      document.getElementById('flow').style.display='none';
+      document.getElementById('done').classList.add('show');
+    }
+  });
+  backBtn.addEventListener('click',function(){if(step>0){step--;show(step);}});
+  document.getElementById('prep').addEventListener('keydown',function(e){if(e.key==='Enter'&&e.target.tagName!=='TEXTAREA'&&step<total-1){e.preventDefault();nextBtn.click();}});
+  show(0);
+</script>
+</body>
+</html>
