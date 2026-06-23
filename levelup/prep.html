@@ -4,6 +4,9 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Travalor — Before Our Call</title>
+<link rel="icon" href="favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
 <meta name="robots" content="noindex" /><!-- this page is only for booked artists -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -58,7 +61,7 @@
       <div class="intro">
         <span class="plate">You're booked</span>
         <h1>Before our call…</h1>
-        <p>Give me a few minutes of context so our session is actually useful — not 30 minutes of me catching up. Six quick questions.</p>
+        <p>Give me a few minutes of context so our session is actually useful — not 30 minutes of me catching up. A few quick questions.</p>
       </div>
       <div class="progress" id="prog"></div>
 
@@ -128,6 +131,14 @@
           <div class="err" id="er6"></div>
         </div>
 
+        <!-- 8: confirm email (so answers match your booking) -->
+        <div class="qstep" data-step="7">
+          <p class="qlabel">Last thing — confirm the email you booked with.</p>
+          <p class="qhint">So I can match your answers to your booking. Use the same email you booked with.</p>
+          <input class="field" id="q_email" type="email" placeholder="you@email.com" />
+          <div class="err" id="er7"></div>
+        </div>
+
         <div class="nav">
           <button type="button" class="back" id="backBtn" style="visibility:hidden">← Back</button>
           <button type="button" class="btn" id="nextBtn">Continue →</button>
@@ -143,8 +154,11 @@
   </div>
 
 <script>
+  /* ▸ paste your Make "Prep" webhook URL here (a SECOND webhook, separate from the booking one) */
+  var PREP_ENDPOINT = "";
+  var emailRe=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   function track(n,p){try{if(window.gtag)gtag('event',n,p||{});}catch(e){}}
-  var step=0,total=7,status='',invest='';
+  var step=0,total=8,status='',invest='';
   var steps=document.querySelectorAll('.qstep');
   var prog=document.getElementById('prog');
   for(var i=0;i<total;i++){var b=document.createElement('i');if(i===0)b.className='on';prog.appendChild(b);}
@@ -171,17 +185,17 @@
     if(n===3&&!val('q_exp')){e.textContent='Even a sentence helps.';return false;}
     if(n===4&&!val('q_refs')){e.textContent='Drop a genre and a couple of names.';return false;}
     if(n===5&&!invest){e.textContent='Pick the one that fits best.';return false;}
+    if(n===7&&!emailRe.test(val('q_email'))){e.textContent='Pop in the email you booked with so I can match your answers.';return false;}
     return true; /* step 6 optional */
   }
-  function payload(){return {stageName:val('q_stage'),status:status,goals:val('q_goals'),experience:val('q_exp'),referenceSound:val('q_refs'),investment:invest,extra:val('q_extra')};}
+  function payload(){return {email:val('q_email'),stageName:val('q_stage'),careerStatus:status,goals:val('q_goals'),experience:val('q_exp'),referenceSound:val('q_refs'),investment:invest,extra:val('q_extra'),formType:'prep'};}
 
   nextBtn.addEventListener('click',function(){
     if(!validate(step))return;
     track('prep_step',{step:step});
     if(step<total-1){step++;show(step);}
     else{
-      /* ▸ EDIT LEAD ENDPOINT — POST the pre-consult answers to your webhook / CRM (match on email if you pass it through). */
-      /* fetch('https://YOUR-ENDPOINT',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload())}); */
+      if(PREP_ENDPOINT){try{fetch(PREP_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload()),keepalive:true});}catch(e){}}
       track('prep_complete',{status:status,investment:invest});
       document.getElementById('flow').style.display='none';
       document.getElementById('done').classList.add('show');
