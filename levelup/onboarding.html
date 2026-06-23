@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Travalor — Collaborator Onboarding</title>
+<link rel="icon" href="favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<meta name="robots" content="noindex" /><!-- private: only sent to signed collaborators -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root{--ink:#130D1A;--ink-2:#1B1326;--surface:#241932;--paper:#F1ECF6;--muted:#A99BB8;--muted-2:#6E607E;
+    --violet:#8A3FD1;--violet-soft:#B583E6;--violet-deep:#2A1640;--gold:#E9A23B;--gold-soft:#F0BD6E;--line:rgba(241,236,246,0.12);
+    --display:"Playfair Display",Georgia,serif;--body:"Open Sans",system-ui,sans-serif;--mono:"Space Mono",ui-monospace,monospace;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--ink);color:var(--paper);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased;
+    min-height:100vh;display:flex;align-items:center;justify-content:center;padding:28px}
+  ::selection{background:var(--gold);color:var(--ink)}
+  .card{width:100%;max-width:640px;background:var(--ink-2);border:1px solid var(--line);border-radius:12px;padding:2.6rem 2.2rem}
+  .brand{text-align:center;margin-bottom:1.6rem}
+  .plate{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+  .progress{display:flex;gap:6px;margin:1.4rem 0 1.8rem}
+  .progress i{flex:1;height:3px;background:var(--line);border-radius:2px;transition:background .3s}
+  .progress i.on{background:var(--gold)}
+  .intro{text-align:center;margin-bottom:1.6rem}
+  .intro h1{font-family:var(--display);font-weight:600;font-size:clamp(1.5rem,4vw,2rem);margin:.4rem 0 .6rem}
+  .intro p{color:var(--muted);font-size:.96rem;max-width:48ch;margin:0 auto}
+  .qstep{display:none}.qstep.active{display:block;animation:fade .35s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .seclabel{font-family:var(--mono);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--violet-soft);margin-bottom:.3rem}
+  .sectitle{font-family:var(--display);font-size:1.5rem;font-weight:600;margin-bottom:1.4rem}
+  .q{margin-bottom:1.3rem}
+  .q>label{display:block;font-weight:600;font-size:.98rem;margin-bottom:.5rem}
+  .q .sub{display:block;color:var(--muted);font-weight:400;font-size:.84rem;margin-top:.15rem}
+  .req{color:var(--gold)}
+  .field{width:100%;background:var(--surface);border:1px solid var(--line);border-radius:6px;color:var(--paper);font-family:var(--body);font-size:1rem;padding:.85em 1em;outline:none;transition:border .2s}
+  .field:focus{border-color:var(--violet-soft)}
+  textarea.field{min-height:96px;resize:vertical}
+  .row{display:flex;gap:12px}.row .q{flex:1}
+  @media(max-width:520px){.row{flex-direction:column;gap:0}}
+  .opts{display:flex;flex-direction:column;gap:9px}
+  .opts.grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+  .opt{text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:8px;color:var(--paper);padding:.8em 1em;font-family:var(--body);font-size:.96rem;cursor:pointer;transition:border .2s,background .2s}
+  .opt:hover,.opt.sel{border-color:var(--gold);background:rgba(233,162,59,.08)}
+  .opt small{display:block;color:var(--muted);font-size:.8rem;margin-top:.2rem}
+  .scale{display:flex;gap:8px}
+  .scale .opt{flex:1;text-align:center;padding:.7em .2em}
+  .notice{background:rgba(138,63,209,.12);border:1px solid rgba(181,131,230,.35);border-radius:8px;padding:.9em 1em;font-size:.86rem;color:var(--violet-soft);margin-bottom:1rem}
+  .reveal-block{border-left:2px solid var(--violet);padding-left:1rem;margin-top:.4rem}
+  .nav{display:flex;justify-content:space-between;align-items:center;margin-top:1.9rem}
+  .back{background:none;border:none;color:var(--muted);font-family:var(--mono);font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+  .back:hover{color:var(--paper)}
+  .btn{display:inline-flex;align-items:center;gap:.5em;font-family:var(--body);font-weight:700;font-size:1rem;padding:.95em 1.7em;border-radius:5px;background:var(--gold);color:var(--ink);border:none;cursor:pointer;transition:transform .2s}
+  .btn:hover{transform:translateY(-2px)}
+  .err{color:var(--gold-soft);font-family:var(--mono);font-size:.74rem;margin-top:1rem;min-height:1em}
+  .done{text-align:center;display:none}.done.show{display:block;animation:fade .4s ease}
+  .done .tick{width:64px;height:64px;border-radius:50%;background:rgba(233,162,59,.16);color:var(--gold);font-size:1.8rem;display:grid;place-items:center;margin:0 auto 1.2rem}
+  .done h2{font-family:var(--display);font-weight:600;font-size:1.6rem;margin-bottom:.7rem}
+  .done p{color:var(--muted);max-width:42ch;margin:0 auto}
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="brand"><img src="logo.png" alt="Travalor" style="height:30px;width:auto" /></div>
+
+    <div id="flow">
+      <div class="intro">
+        <span class="plate">Welcome aboard</span>
+        <h1>Let's make this official.</h1>
+        <p>A few questions so I can set your project up properly, handle the paperwork, and walk into our first session already knowing how to pull the best out of you. About 5 minutes.</p>
+      </div>
+      <div class="progress" id="prog"></div>
+
+      <form id="ob" novalidate>
+
+        <!-- ============ STEP 0 — IDENTITY ============ -->
+        <div class="qstep active" data-step="0">
+          <div class="seclabel">Section 1 / 7</div>
+          <div class="sectitle">Who you are</div>
+          <div class="row">
+            <div class="q"><label>First name <span class="req">*</span></label><input class="field" id="o_first" type="text" /></div>
+            <div class="q"><label>Last name <span class="req">*</span></label><input class="field" id="o_last" type="text" /></div>
+          </div>
+          <div class="q"><label>Stage / artist name <span class="req">*</span></label><input class="field" id="o_stage" type="text" /></div>
+          <div class="q"><label>Email <span class="req">*</span></label><input class="field" id="o_email" type="email" /></div>
+          <div class="row">
+            <div class="q"><label>Phone <span class="req">*</span></label><input class="field" id="o_phone" type="tel" /></div>
+            <div class="q"><label>Instagram</label><input class="field" id="o_ig" type="text" placeholder="@handle" /></div>
+          </div>
+          <div class="err" id="er0"></div>
+        </div>
+
+        <!-- ============ STEP 1 — YOUR MUSIC ============ -->
+        <div class="qstep" data-step="1">
+          <div class="seclabel">Section 2 / 7</div>
+          <div class="sectitle">Your music</div>
+
+          <div class="q"><label>First time working with Travalor? <span class="req">*</span></label>
+            <div class="opts grid" data-key="firstTime">
+              <button type="button" class="opt" data-val="Yes">Yes</button>
+              <button type="button" class="opt" data-val="No">No</button>
+            </div>
+          </div>
+
+          <div class="q"><label>Times you've collaborated in-studio? <span class="req">*</span><span class="sub">Played, sang/rapped, co-produced, session work, etc.</span></label>
+            <div class="opts grid" data-key="studioExp">
+              <button type="button" class="opt" data-val="0">0</button>
+              <button type="button" class="opt" data-val="1-3">1–3</button>
+              <button type="button" class="opt" data-val="4-6">4–6</button>
+              <button type="button" class="opt" data-val="7-9">7–9</button>
+              <button type="button" class="opt" data-val="10+">10+</button>
+            </div>
+          </div>
+
+          <div class="q"><label>Times you've co-written with other artists in-studio?</label>
+            <div class="opts grid" data-key="cowriteExp">
+              <button type="button" class="opt" data-val="0">0</button>
+              <button type="button" class="opt" data-val="1-3">1–3</button>
+              <button type="button" class="opt" data-val="4-6">4–6</button>
+              <button type="button" class="opt" data-val="7-9">7–9</button>
+              <button type="button" class="opt" data-val="10+">10+</button>
+            </div>
+          </div>
+
+          <div class="q"><label>Genre(s) you create <span class="req">*</span><span class="sub">Pick all that apply.</span></label>
+            <div class="opts grid" data-key="genres" data-multi="1">
+              <button type="button" class="opt" data-val="Acoustic">Acoustic</button>
+              <button type="button" class="opt" data-val="EDM">EDM</button>
+              <button type="button" class="opt" data-val="Folk">Folk</button>
+              <button type="button" class="opt" data-val="Jazz">Jazz</button>
+              <button type="button" class="opt" data-val="Rap/Hip-Hop">Rap / Hip-Hop</button>
+              <button type="button" class="opt" data-val="R&B">R&B</button>
+              <button type="button" class="opt" data-val="Rock">Rock</button>
+              <button type="button" class="opt" data-val="Pop">Pop</button>
+            </div>
+            <input class="field" id="o_genre_other" type="text" placeholder="Other (optional)" style="margin-top:9px" />
+          </div>
+
+          <div class="q"><label>Label representation <span class="req">*</span></label>
+            <div class="opts" data-key="labelRep">
+              <button type="button" class="opt" data-val="Independent, no plans to sign">Fully independent — and I don't plan to sign</button>
+              <button type="button" class="opt" data-val="Independent, plan to sign">Fully independent — but I do plan to sign</button>
+              <button type="button" class="opt" data-val="Indie label">Repped / managed by an independent label</button>
+              <button type="button" class="opt" data-val="Major label">Repped / managed by a major label</button>
+              <button type="button" class="opt" data-val="Distribution deal only">Distribution deal only</button>
+            </div>
+          </div>
+
+          <div class="q"><label>Your greatest strengths in your music <span class="req">*</span></label><textarea class="field" id="o_strengths"></textarea></div>
+          <div class="q"><label>Where you most want to improve <span class="req">*</span></label><textarea class="field" id="o_improve"></textarea></div>
+          <div class="err" id="er1"></div>
+        </div>
+
+        <!-- ============ STEP 2 — WORKING TOGETHER ============ -->
+        <div class="qstep" data-step="2">
+          <div class="seclabel">Section 3 / 7</div>
+          <div class="sectitle">Working together</div>
+
+          <div class="q"><label>What are you seeking from Travalor as a producer/engineer? <span class="req">*</span></label><textarea class="field" id="o_seeking"></textarea></div>
+
+          <div class="q"><label>Beyond recording/mixing vocals, what should I contribute?<span class="sub">Pick all that apply.</span></label>
+            <div class="opts grid" data-key="contribute" data-multi="1">
+              <button type="button" class="opt" data-val="Additional writing">Additional writing</button>
+              <button type="button" class="opt" data-val="Additional production">Additional production</button>
+              <button type="button" class="opt" data-val="Melodies">Melodies</button>
+              <button type="button" class="opt" data-val="Song arrangement">Song arrangement</button>
+              <button type="button" class="opt" data-val="Song/vocal feedback">Song / vocal feedback</button>
+            </div>
+          </div>
+
+          <div class="q"><label>Preferred way of receiving feedback <span class="req">*</span></label>
+            <div class="opts" data-key="feedback">
+              <button type="button" class="opt" data-val="Direct and unfiltered">Direct and unfiltered</button>
+              <button type="button" class="opt" data-val="Compliment sandwich">Compliment sandwich — what's working & what's not</button>
+              <button type="button" class="opt" data-val="Positive support">Positive support</button>
+              <button type="button" class="opt" data-val="No feedback">No feedback</button>
+            </div>
+          </div>
+
+          <div class="q"><label>Why are you creating music? <span class="req">*</span></label>
+            <div class="opts" data-key="why">
+              <button type="button" class="opt" data-val="For fun">For fun — no expectations or strings</button>
+              <button type="button" class="opt" data-val="Start career">To start my music career</button>
+              <button type="button" class="opt" data-val="Further career">To further my music career</button>
+              <button type="button" class="opt" data-val="Ghost work">Extra money as a ghostwriter / ghost producer</button>
+            </div>
+          </div>
+
+          <div class="q"><label>What do you want to achieve with your music? <span class="req">*</span></label><textarea class="field" id="o_achieve"></textarea></div>
+          <div class="err" id="er2"></div>
+        </div>
+
+        <!-- ============ STEP 3 — PERFORMANCE & REACH ============ -->
+        <div class="qstep" data-step="3">
+          <div class="seclabel">Section 4 / 7</div>
+          <div class="sectitle">Performance & reach</div>
+
+          <div class="q"><label>How do you want to perform your music? <span class="req">*</span><span class="sub">Pick all that apply.</span></label>
+            <div class="opts" data-key="perform" data-multi="1">
+              <button type="button" class="opt" data-val="Small venues">Small venues (coffee shops, open mics, bars, jazz clubs)</button>
+              <button type="button" class="opt" data-val="Medium venues">Medium venues (music halls)</button>
+              <button type="button" class="opt" data-val="Large venues">Large venues (stadiums, EDC, Coachella, Ultra)</button>
+              <button type="button" class="opt" data-val="Online">Online (TikTok, livestreams, YouTube/IG live)</button>
+              <button type="button" class="opt" data-val="No live">Not live at all — strictly for listening</button>
+            </div>
+          </div>
+
+          <div class="q"><label>Where do you see your music being played? <span class="req">*</span><span class="sub">Pick all that apply.</span></label>
+            <div class="opts grid" data-key="played" data-multi="1">
+              <button type="button" class="opt" data-val="Advertisements">Advertisements</button>
+              <button type="button" class="opt" data-val="Radio">Radio</button>
+              <button type="button" class="opt" data-val="TV">TV</button>
+              <button type="button" class="opt" data-val="Streaming">Streaming</button>
+              <button type="button" class="opt" data-val="Social media">Social media</button>
+              <button type="button" class="opt" data-val="New media">New media (NFT, VR, AR)</button>
+              <button type="button" class="opt" data-val="Family/friends">Family & friends</button>
+            </div>
+          </div>
+
+          <div class="q"><label>Attachment to the music you write <span class="req">*</span><span class="sub">0 = not tied to it at all · 5 = no one else can perform what I write</span></label>
+            <div class="opts scale" data-key="attachment">
+              <button type="button" class="opt" data-val="0">0</button>
+              <button type="button" class="opt" data-val="1">1</button>
+              <button type="button" class="opt" data-val="2">2</button>
+              <button type="button" class="opt" data-val="3">3</button>
+              <button type="button" class="opt" data-val="4">4</button>
+              <button type="button" class="opt" data-val="5">5</button>
+            </div>
+          </div>
+
+          <div class="q"><label>Are you okay with others performing your music?<span class="sub">Pick all that apply.</span></label>
+            <div class="opts grid" data-key="others" data-multi="1">
+              <button type="button" class="opt" data-val="Yes">Yes</button>
+              <button type="button" class="opt" data-val="No">No</button>
+              <button type="button" class="opt" data-val="Studio version">Playing the studio version</button>
+              <button type="button" class="opt" data-val="Remixing">Remixing</button>
+              <button type="button" class="opt" data-val="Covers">Covers</button>
+            </div>
+          </div>
+          <div class="err" id="er3"></div>
+        </div>
+
+        <!-- ============ STEP 4 — THIS PROJECT ============ -->
+        <div class="qstep" data-step="4">
+          <div class="seclabel">Section 5 / 7</div>
+          <div class="sectitle">This project</div>
+
+          <div class="q"><label>What are we creating? <span class="req">*</span></label>
+            <div class="opts grid" data-key="projectType">
+              <button type="button" class="opt" data-val="Single">A single</button>
+              <button type="button" class="opt" data-val="EP">An EP</button>
+              <button type="button" class="opt" data-val="Album">An album (LP)</button>
+              <button type="button" class="opt" data-val="Sync">Sync</button>
+            </div>
+          </div>
+
+          <div class="q"><label>Do you have a release plan for this project? <span class="req">*</span></label>
+            <div class="opts grid" data-key="releasePlan">
+              <button type="button" class="opt" data-val="Yes">Yes</button>
+              <button type="button" class="opt" data-val="No">No</button>
+            </div>
+          </div>
+
+          <div class="q"><label>Is the song already written? <span class="req">*</span></label>
+            <div class="opts" data-key="written">
+              <button type="button" class="opt" data-val="Written & ready">Yes — written, practiced, ready to record</button>
+              <button type="button" class="opt" data-val="Framework">Yes — solid framework, a few things to work out</button>
+              <button type="button" class="opt" data-val="Write solo">No — I'll write it myself in the session</button>
+              <button type="button" class="opt" data-val="Write together">No — I'd like help writing it in the session</button>
+            </div>
+          </div>
+
+          <div class="q"><label>Demo link (if you have one)<span class="sub">Paste a Google Drive, Dropbox, or boombox link — no need to email it.</span></label>
+            <input class="field" id="o_demo" type="url" placeholder="https://…" />
+          </div>
+          <div class="err" id="er4"></div>
+        </div>
+
+        <!-- ============ STEP 5 — LOGISTICS & ELIGIBILITY ============ -->
+        <div class="qstep" data-step="5">
+          <div class="seclabel">Section 6 / 7</div>
+          <div class="sectitle">Logistics</div>
+
+          <div class="q"><label>Date of birth <span class="req">*</span>
+            <span class="sub">You must be 18+ to work in a session. If under 18, a parent/legal guardian must be present for the session and complete the forms that follow — standard studio policy.</span></label>
+            <input class="field" id="o_dob" type="date" />
+          </div>
+
+          <div id="guardianFields" style="display:none">
+            <div class="notice">Since you're under 18, I'll need a parent or legal guardian's details — they'll need to be present and co-sign.</div>
+            <div class="reveal-block">
+              <div class="q"><label>Guardian full name <span class="req">*</span></label><input class="field" id="o_gname" type="text" /></div>
+              <div class="row">
+                <div class="q"><label>Guardian phone <span class="req">*</span></label><input class="field" id="o_gphone" type="tel" /></div>
+                <div class="q"><label>Guardian email <span class="req">*</span></label><input class="field" id="o_gemail" type="email" /></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="q"><label>Mailing address</label><input class="field" id="o_addr" type="text" placeholder="Street address" /></div>
+          <div class="row">
+            <div class="q"><label>City</label><input class="field" id="o_city" type="text" /></div>
+            <div class="q"><label>State</label><input class="field" id="o_state" type="text" /></div>
+          </div>
+          <div class="row">
+            <div class="q"><label>ZIP / Postcode</label><input class="field" id="o_zip" type="text" /></div>
+            <div class="q"><label>Country</label><input class="field" id="o_country" type="text" /></div>
+          </div>
+          <div class="err" id="er5"></div>
+        </div>
+
+        <!-- ============ STEP 6 — RIGHTS & REGISTRATION ============ -->
+        <div class="qstep" data-step="6">
+          <div class="seclabel">Section 7 / 7</div>
+          <div class="sectitle">Rights & registration</div>
+
+          <div class="q"><label>Are you a member of a Performing Rights Organization? <span class="req">*</span>
+            <span class="sub">PRS (UK), APRA AMCOS (Australia), ASCAP/BMI (US), etc.</span></label>
+            <div class="opts grid" data-key="proMember">
+              <button type="button" class="opt" data-val="Yes">Yes</button>
+              <button type="button" class="opt" data-val="No">No</button>
+            </div>
+          </div>
+
+          <div id="proFields" style="display:none">
+            <div class="reveal-block">
+              <div class="q"><label>Which PRO? <span class="req">*</span></label>
+                <div class="opts grid" data-key="proName">
+                  <button type="button" class="opt" data-val="ASCAP">ASCAP</button>
+                  <button type="button" class="opt" data-val="BMI">BMI</button>
+                  <button type="button" class="opt" data-val="SESAC">SESAC</button>
+                  <button type="button" class="opt" data-val="APRA AMCOS">APRA AMCOS</button>
+                  <button type="button" class="opt" data-val="Songtrust">Songtrust</button>
+                  <button type="button" class="opt" data-val="SoundExchange">SoundExchange</button>
+                </div>
+                <input class="field" id="o_pro_other" type="text" placeholder="Other PRO (optional)" style="margin-top:9px" />
+              </div>
+              <div class="row">
+                <div class="q"><label>Member # <span class="req">*</span></label><input class="field" id="o_promember" type="text" /></div>
+                <div class="q"><label>IPI number <span class="req">*</span></label><input class="field" id="o_proipi" type="text" /></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="q"><label>Are you signed to a publisher? <span class="req">*</span></label>
+            <div class="opts grid" data-key="publisher">
+              <button type="button" class="opt" data-val="Yes">Yes</button>
+              <button type="button" class="opt" data-val="No">No</button>
+            </div>
+          </div>
+
+          <div id="pubFields" style="display:none">
+            <div class="reveal-block">
+              <div class="q"><label>Publishing company <span class="req">*</span></label><input class="field" id="o_pubco" type="text" /></div>
+              <div class="q"><label>Your IPI / CAE number <span class="req">*</span></label><input class="field" id="o_pubipi" type="text" /></div>
+              <div class="q"><label>Rep's name (first, last) <span class="req">*</span></label><input class="field" id="o_pubrep" type="text" /></div>
+              <div class="row">
+                <div class="q"><label>Rep's email <span class="req">*</span></label><input class="field" id="o_pubrepemail" type="email" /></div>
+                <div class="q"><label>Rep's phone</label><input class="field" id="o_pubrepphone" type="tel" /></div>
+              </div>
+            </div>
+          </div>
+          <div class="err" id="er6"></div>
+        </div>
+
+        <div class="nav">
+          <button type="button" class="back" id="backBtn" style="visibility:hidden">← Back</button>
+          <button type="button" class="btn" id="nextBtn">Continue →</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="done" id="done">
+      <div class="tick">✓</div>
+      <h2>You're all set — welcome to the team.</h2>
+      <p>I've got everything I need to set up your project and the paperwork. I'll be in touch with next steps. Let's make something that moves people.</p>
+    </div>
+  </div>
+
+<script>
+  /* ▸ paste your Make "Onboarding" webhook URL here (a NEW webhook → Studio base) */
+  var ONBOARDING_ENDPOINT = "";
+  var emailRe=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  function track(n,p){try{if(window.gtag)gtag('event',n,p||{});}catch(e){}}
+
+  var A={};                 /* holds all option-button answers */
+  var step=0,total=7;
+  var steps=document.querySelectorAll('.qstep');
+  var prog=document.getElementById('prog');
+  for(var i=0;i<total;i++){var b=document.createElement('i');if(i===0)b.className='on';prog.appendChild(b);}
+  var bars=prog.children;
+  var nextBtn=document.getElementById('nextBtn'),backBtn=document.getElementById('backBtn');
+  function val(id){var el=document.getElementById(id);return el?el.value.trim():'';}
+  function clearErr(n){var e=document.getElementById('er'+n);if(e)e.textContent='';}
+
+  /* option buttons (single + multi), with conditional reveals */
+  document.querySelectorAll('.opts').forEach(function(group){
+    var key=group.dataset.key, multi=group.dataset.multi==='1';
+    group.querySelectorAll('.opt').forEach(function(o){
+      o.addEventListener('click',function(){
+        if(multi){
+          o.classList.toggle('sel');
+          A[key]=Array.prototype.slice.call(group.querySelectorAll('.opt.sel')).map(function(x){return x.dataset.val;});
+        }else{
+          group.querySelectorAll('.opt').forEach(function(x){x.classList.remove('sel');});
+          o.classList.add('sel');A[key]=o.dataset.val;
+          if(key==='proMember')document.getElementById('proFields').style.display=(o.dataset.val==='Yes')?'block':'none';
+          if(key==='publisher')document.getElementById('pubFields').style.display=(o.dataset.val==='Yes')?'block':'none';
+        }
+      });
+    });
+  });
+
+  /* age + guardian reveal */
+  var isMinor=false;
+  document.getElementById('o_dob').addEventListener('change',function(){
+    var d=new Date(this.value),t=new Date();
+    if(isNaN(d)){isMinor=false;document.getElementById('guardianFields').style.display='none';return;}
+    var age=t.getFullYear()-d.getFullYear();var m=t.getMonth()-d.getMonth();
+    if(m<0||(m===0&&t.getDate()<d.getDate()))age--;
+    isMinor=age<18;
+    document.getElementById('guardianFields').style.display=isMinor?'block':'none';
+  });
+
+  function show(n){
+    steps.forEach(function(s){s.classList.toggle('active',+s.dataset.step===n);});
+    for(var i=0;i<total;i++){bars[i].classList.toggle('on',i<=n);}
+    backBtn.style.visibility=n===0?'hidden':'visible';
+    nextBtn.textContent=n===total-1?'Submit ✓':'Continue →';
+    var f=steps[n].querySelector('input,textarea');if(f)setTimeout(function(){f.focus();},60);
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+
+  function need(ids){for(var i=0;i<ids.length;i++){if(!val(ids[i]))return false;}return true;}
+  function validate(n){
+    var e=document.getElementById('er'+n);e.textContent='';
+    function fail(msg){e.textContent=msg;return false;}
+    if(n===0){
+      if(!need(['o_first','o_last','o_stage']))return fail('Please fill in your name and stage name.');
+      if(!emailRe.test(val('o_email')))return fail('Please enter a valid email.');
+      if(!val('o_phone'))return fail('Please add a phone number.');
+    }
+    if(n===1){
+      if(!A.firstTime)return fail('Let me know if this is your first time with me.');
+      if(!A.studioExp)return fail('Pick your in-studio collaboration range.');
+      if(!A.genres||!A.genres.length)return fail('Pick at least one genre.');
+      if(!A.labelRep)return fail('Pick your label situation.');
+      if(!need(['o_strengths','o_improve']))return fail('A sentence on strengths and on what to improve.');
+    }
+    if(n===2){
+      if(!val('o_seeking'))return fail('Tell me what you\'re seeking from me.');
+      if(!A.feedback)return fail('Pick a feedback style.');
+      if(!A.why)return fail('Pick why you\'re creating music.');
+      if(!val('o_achieve'))return fail('Even a sentence on what you want to achieve.');
+    }
+    if(n===3){
+      if(!A.perform||!A.perform.length)return fail('Pick at least one.');
+      if(!A.played||!A.played.length)return fail('Pick at least one.');
+      if(!A.attachment)return fail('Pick a number 0–5.');
+    }
+    if(n===4){
+      if(!A.projectType)return fail('What are we creating?');
+      if(!A.releasePlan)return fail('Do you have a release plan?');
+      if(!A.written)return fail('Is the song written yet?');
+    }
+    if(n===5){
+      if(!val('o_dob'))return fail('Please add your date of birth.');
+      if(isMinor&&!need(['o_gname','o_gphone','o_gemail']))return fail('Guardian details are required for under-18.');
+      if(isMinor&&!emailRe.test(val('o_gemail')))return fail('Please add a valid guardian email.');
+    }
+    if(n===6){
+      if(!A.proMember)return fail('Are you a PRO member?');
+      if(A.proMember==='Yes'){
+        if(!A.proName&&!val('o_pro_other'))return fail('Which PRO are you with?');
+        if(!need(['o_promember','o_proipi']))return fail('Add your member # and IPI.');
+      }
+      if(!A.publisher)return fail('Are you signed to a publisher?');
+      if(A.publisher==='Yes'&&!need(['o_pubco','o_pubipi','o_pubrep','o_pubrepemail']))return fail('Add your publisher details.');
+    }
+    return true;
+  }
+
+  function J(a){return (a&&a.length)?a.join(', '):'';}
+  function payload(){
+    return {
+      formType:'onboarding',
+      firstName:val('o_first'),lastName:val('o_last'),
+      fullName:(val('o_first')+' '+val('o_last')).trim(),
+      stageName:val('o_stage'),email:val('o_email'),phone:val('o_phone'),instagram:val('o_ig'),
+      firstTime:A.firstTime||'',studioExperience:A.studioExp||'',cowriteExperience:A.cowriteExp||'',
+      genres:J(A.genres)+(val('o_genre_other')?(A.genres&&A.genres.length?', ':'')+val('o_genre_other'):''),
+      labelRep:A.labelRep||'',strengths:val('o_strengths'),improve:val('o_improve'),
+      seeking:val('o_seeking'),contribute:J(A.contribute),feedbackStyle:A.feedback||'',
+      reason:A.why||'',achieve:val('o_achieve'),
+      performHow:J(A.perform),wherePlayed:J(A.played),attachment:A.attachment||'',othersPerform:J(A.others),
+      projectType:A.projectType||'',releasePlan:A.releasePlan||'',songWritten:A.written||'',demoLink:val('o_demo'),
+      dob:val('o_dob'),isMinor:isMinor?'Yes':'No',
+      guardianName:val('o_gname'),guardianPhone:val('o_gphone'),guardianEmail:val('o_gemail'),
+      address:val('o_addr'),city:val('o_city'),state:val('o_state'),zip:val('o_zip'),country:val('o_country'),
+      proMember:A.proMember||'',pro:A.proName||val('o_pro_other'),proMemberNumber:val('o_promember'),proIPI:val('o_proipi'),
+      publisherSigned:A.publisher||'',publisher:val('o_pubco'),publisherIPI:val('o_pubipi'),
+      publisherRep:val('o_pubrep'),publisherRepEmail:val('o_pubrepemail'),publisherRepPhone:val('o_pubrepphone')
+    };
+  }
+
+  nextBtn.addEventListener('click',function(){
+    if(!validate(step))return;
+    track('onboarding_step',{step:step});
+    if(step<total-1){step++;show(step);}
+    else{
+      if(ONBOARDING_ENDPOINT){try{fetch(ONBOARDING_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload()),keepalive:true});}catch(e){}}
+      track('onboarding_complete',{});
+      document.getElementById('flow').style.display='none';
+      document.getElementById('done').classList.add('show');
+      window.scrollTo({top:0,behavior:'smooth'});
+    }
+  });
+  backBtn.addEventListener('click',function(){if(step>0){step--;show(step);}});
+  show(0);
+</script>
+</body>
+</html>
