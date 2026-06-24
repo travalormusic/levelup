@@ -1,2124 +1,574 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Travalor — Claim Your FREE Artist Level-Up Session</title>
-    <link rel="icon" href="favicon.ico" sizes="any"/>
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"/>
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png"/>
-    <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
-    <meta name="description" content="Production, mixing and full artist development under one roof — built around your vision, delivered on a timeline in writing. Hip-hop, R&B, EDM. In studio or remote. Claim your FREE 30-minute Artist Level-Up Session."/>
-    <link rel="canonical" href="https://travalormusic.com/levelup/"/>
-    <!-- ▸ EDIT -->
-    <meta property="og:type" content="website"/>
-    <meta property="og:title" content="Travalor — Claim Your FREE Artist Level-Up Session"/>
-    <meta property="og:description" content="Production, mixing and artist development under one roof. Built around your vision, delivered on a timeline in writing."/>
-    <meta property="og:image" content="https://travalormusic.com/levelup/og-image.jpg"/>
-    <!-- ▸ EDIT -->
-    <meta property="og:url" content="https://travalormusic.com/levelup/"/>
-    <meta name="twitter:card" content="summary_large_image"/>
-    <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"ProfessionalService","name":"Travalor","description":"Music production, mix engineering and artist development for independent artists. Hip-hop, R&B, EDM.","url":"https://travalormusic.com/levelup/","image":"https://travalormusic.com/levelup/og-image.jpg","areaServed":"Worldwide (remote) and Australia","serviceType":["Music production","Mix engineering","Artist development"],"priceRange":"$$"}
-    </script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;0,900;1,500;1,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
-    <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css"/>
-    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
-    <!-- ▸ EDIT ANALYTICS (GA4 / Plausible / Fathom)
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
-    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXX');</script>
-    -->
-
-    <style>
-    :root {
-        --ink: #130D1A;
-        --ink-2: #1B1326;
-        --surface: #241932;
-        --paper: #F1ECF6;
-        --muted: #A99BB8;
-        --muted-2: #6E607E;
-        --violet: #8A3FD1;
-        --violet-soft: #B583E6;
-        --violet-deep: #2A1640;
-        --gold: #E9A23B;
-        --gold-soft: #F0BD6E;
-        --line: rgba(241, 236, 246, 0.12);
-        --maxw: 1080px;
-        --display: "Playfair Display", Georgia, serif;
-        --body: "Open Sans", system-ui, sans-serif;
-        --mono: "Space Mono", ui-monospace, monospace;
-    }
-
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0
-    }
-
-    html {
-        scroll-behavior: smooth
-    }
-
-    body {
-        background: var(--ink);
-        color: var(--paper);
-        font-family: var(--body);
-        font-size: 17px;
-        line-height: 1.7;
-        -webkit-font-smoothing: antialiased;
-        overflow-x: hidden;
-        text-align: center
-    }
-
-    ::selection {
-        background: var(--gold);
-        color: var(--ink)
-    }
-
-    .wrap {
-        max-width: var(--maxw);
-        margin: 0 auto;
-        padding: 0 24px
-    }
-
-    .plate {
-        font-family: var(--mono);
-        font-size: .72rem;
-        letter-spacing: .2em;
-        text-transform: uppercase;
-        color: var(--violet-soft)
-    }
-
-    h1, h2, h3 {
-        font-family: var(--display);
-        line-height: 1.1;
-        letter-spacing: -0.01em;
-        font-weight: 700
-    }
-
-    a {
-        color: inherit
-    }
-
-    .hl {
-        background: linear-gradient(transparent 58%, rgba(233, 162, 59, .4) 58%);
-        padding: 0 .08em
-    }
-
-    em.hl {
-        font-style: italic
-    }
-
-    .btn {
-        display: inline-flex;
-        align-items: center;
-        gap: .6em;
-        font-family: var(--body);
-        font-weight: 700;
-        font-size: 1rem;
-        padding: 1.05em 1.9em;
-        border-radius: 4px;
-        background: var(--gold);
-        color: var(--ink);
-        border: 1px solid var(--gold);
-        text-decoration: none;
-        cursor: pointer;
-        transition: transform .25s, box-shadow .25s
-    }
-
-    .btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 14px 44px -12px rgba(233, 162, 59, .6)
-    }
-
-    .btn .arrow {
-        transition:transform .25s
-    }
-
-    .btn:hover .arrow {
-        transform: translateX(4px)
-    }
-
-    .btn--lg {
-        font-size: 1.12rem;
-        padding: 1.15em 2.2em
-    }
-
-    .cta-block {
-        margin-top: 2.8rem
-    }
-
-    .cta-rea {
-        font-family: var(--mono);
-        font-size: .72rem;
-        letter-spacing: .1em;
-        color: var(--muted);
-        text-transform: uppercase;
-        margin-top: 1rem
-    }
-
-    nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 60;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 14px 24px;
-        background: linear-gradient(to bottom, rgba(19, 13, 26, .92), rgba(19, 13, 26, 0));
-        backdrop-filter: blur(3px)
-    }
-
-    .brand img {
-        height: 30px;
-        width: auto;
-        display: block
-    }
-
-    nav .btn {
-        padding: .65em 1.15em;
-        font-size: .8rem
-    }
-
-    @media (max-width: 680px) {
-        nav .nav-cta {
-            display: none
-        }
-    }
-
-    .hero {
-        position: relative;
-        min-height: 100svh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 110px 0 70px;
-        overflow: hidden
-    }
-
-    .hero__media {
-        position: absolute;
-        inset: 0;
-        z-index: 0
-    }
-
-    .hero__media img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        filter: saturate(.92) contrast(1.04)
-    }
-
-    .hero__media::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: radial-gradient(90% 80% at 50% 32%, rgba(42, 22, 64, .5), transparent 70%), linear-gradient(to bottom, rgba(19, 13, 26, .82), rgba(19, 13, 26, .66) 48%, var(--ink) 96%)
-    }
-
-    .hero__inner {
-        position: relative;
-        z-index: 2
-    }
-
-    .prehead {
-        display: inline-block;
-        font-family: var(--mono);
-        font-size: .74rem;
-        letter-spacing: .18em;
-        text-transform: uppercase;
-        color: var(--gold);
-        border: 1px solid rgba(233, 162, 59, .35);
-        border-radius: 40px;
-        padding: .55em 1.2em;
-        margin-bottom: 1.6rem
-    }
-
-    .hero h1 {
-        font-size: clamp(2.5rem, 6.4vw, 5rem);
-        max-width: 20ch;
-        margin: 0 auto 1.3rem;
-        font-weight: 800
-    }
-
-    .hero__sub {
-        font-size: clamp(1.05rem, 1.8vw, 1.25rem);
-        max-width: 54ch;
-        margin: 0 auto;
-        opacity: .95
-    }
-
-    .chips {
-        display: flex;
-        flex-wrap: wrap;
-        gap: .6rem;
-        justify-content: center;
-        margin-top: 2.2rem
-    }
-
-    .chip {
-        font-family: var(--mono);
-        font-size: .7rem;
-        letter-spacing: .06em;
-        color: var(--muted);
-        border: 1px solid var(--line);
-        border-radius: 40px;
-        padding: .5em 1em
-    }
-
-    .chip b {
-        color: var(--violet-soft);
-        font-weight: 400
-    }
-
-    section {
-        padding: clamp(70px, 10vw, 128px) 0
-    }
-
-    .bg-2 {
-        background: var(--ink-2)
-    }
-
-    .section-bg {
-        position: relative;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat
-    }
-
-    .section-bg::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        z-index: 0;
-        background: linear-gradient(to bottom, rgba(19, 13, 26, .93), rgba(19, 13, 26, .87) 45%, rgba(19, 13, 26, .96))
-    }
-
-    .section-bg > * {
-        position: relative;
-        z-index: 1
-    }
-
-    .eyebrow {
-        margin-bottom: 1.2rem;
-        display: inline-block
-    }
-
-    .section-head {
-        font-size: clamp(1.8rem, 4.2vw, 3rem);
-        max-width: 22ch;
-        margin: 0 auto 1.3rem
-    }
-
-    .lead {
-        color: var(--muted);
-        max-width: 58ch;
-        margin: 0 auto;
-        font-size: 1.08rem
-    }
-
-    .body-copy {
-        max-width: 60ch;
-        margin: 1.4rem auto 0;
-        color: var(--muted)
-    }
-
-    .body-copy b {
-        color: var(--paper);
-        font-weight: 600
-    }
-
-    .mark-divider {
-        height: 40px;
-        width: auto;
-        opacity: .5;
-        display: block;
-        margin: 0 auto 1.5rem
-    }
-
-    .subhero-strip {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 10px;
-        max-width: 820px;
-        margin: 0 auto
-    }
-
-    .subhero-strip img {
-        width: 100%;
-        aspect-ratio: 1/1;
-        object-fit: cover;
-        border-radius: 6px;
-        border: 1px solid var(--line);
-        filter: brightness(.94) saturate(.96)
-    }
-
-    @media (max-width: 600px) {
-        .subhero-strip {
-            grid-template-columns: 1fr 1fr
-        }
-    }
-
-    .strip-band {
-        padding: 34px 0;
-        background: var(--ink-2)
-    }
-
-    .media-band {
-        margin: 3rem auto 0;
-        max-width: 760px;
-        border-radius: 12px;
-        overflow: hidden;
-        border: 1px solid var(--line)
-    }
-
-    .media-band img {
-        width: 100%;
-        display: block;
-        aspect-ratio: 1/1;
-        object-fit: cover
-    }
-
-    .villain {
-        margin: 2.6rem auto 0;
-        max-width: 64ch;
-        border: 1px solid var(--line);
-        border-left: 3px solid var(--gold);
-        background: var(--surface);
-        padding: 1.8rem;
-        text-align: left;
-        border-radius: 4px
-    }
-
-    .villain b {
-        color: var(--gold-soft)
-    }
-
-    .pillars {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 14px;
-        margin-top: 3rem
-    }
-
-    @media (max-width: 760px) {
-        .pillars {
-            grid-template-columns: 1fr 1fr
-        }
-    }
-
-    .pillar {
-        border: 1px solid var(--line);
-        padding: 1.7rem 1.3rem;
-        border-radius: 4px;
-        background: var(--surface)
-    }
-
-    .pillar .n {
-        font-family: var(--mono);
-        font-size: .72rem;
-        color: var(--gold);
-        letter-spacing: .1em
-    }
-
-    .pillar h3 {
-        font-size: 1.2rem;
-        margin: .7rem 0 .4rem
-    }
-
-    .pillar p {
-        font-size: .92rem;
-        color: var(--muted)
-    }
-
-    .about {
-        display: grid;
-        grid-template-columns: 0.85fr 1.15fr;
-        gap: 2.6rem;
-        align-items: center;
-        text-align: left;
-        max-width: 920px;
-        margin: 0 auto
-    }
-
-    @media (max-width: 760px) {
-        .about {
-            grid-template-columns: 1fr;
-            text-align: center
-        }
-    }
-
-    .about img {
-        width: 100%;
-        aspect-ratio: 4/5;
-        object-fit: cover;
-        border-radius: 12px;
-        border: 1px solid var(--line)
-    }
-
-    .about h2 {
-        font-size: clamp(1.7rem, 3.6vw, 2.6rem);
-        margin-bottom: 1.1rem
-    }
-
-    .about p {
-        color: var(--muted);
-        margin-bottom: 1rem
-    }
-
-    .about p b {
-        color: var(--paper);
-        font-weight: 600
-    }
-
-    .cmp {
-        margin: 3rem auto 0;
-        max-width: 780px;
-        border: 1px solid var(--line);
-        border-radius: 6px;
-        overflow: hidden
-    }
-
-    .cmp .row {
-        display: grid;
-        grid-template-columns: 1fr 110px 130px;
-        align-items: center;
-        border-top: 1px solid var(--line)
-    }
-
-    .cmp .row:first-child {
-        border-top: 0
-    }
-
-    .cmp .head {
-        background: var(--violet-deep);
-        font-family: var(--mono);
-        font-size: .72rem;
-        letter-spacing: .08em;
-        text-transform: uppercase
-    }
-
-    .cmp .c {
-        padding: 1.05rem 1rem;
-        text-align: center;
-        font-family: var(--mono);
-        font-size: .74rem
-    }
-
-    .cmp .crit {
-        text-align: left;
-        font-family: var(--body);
-        font-size: .98rem;
-        color: var(--paper);
-        padding-left: 1.3rem
-    }
-
-    .cmp .me {
-        color:var(--gold)
-    }
-
-    .cmp .them {
-        color: var(--muted-2)
-    }
-
-    .cmp .yes::before {
-        content: "\2713 ";
-        font-weight:700
-    }
-
-    .cmp .no::before {
-        content: "\2715 ";
-    }
-
-    @media (max-width: 560px) {
-        .cmp .row {
-            grid-template-columns:1fr 56px 64px
-        }
-
-        .cmp .crit {
-            font-size: .86rem;
-            padding-left:.9rem
-        }
-
-        .cmp .c {
-            padding: .9rem .4rem
-        }
-    }
-
-    .work-quote {
-        font-family: var(--display);
-        font-size: clamp(1.45rem, 3.2vw, 2.2rem);
-        line-height: 1.32;
-        max-width: 30ch;
-        margin: 0 auto;
-        font-weight: 600
-    }
-
-    .work-quote b {
-        color: var(--violet-soft)
-    }
-
-    .feature-quote {
-        font-family: var(--display);
-        font-size: clamp(1.4rem, 3vw, 2.1rem);
-        line-height: 1.4;
-        max-width: 24ch;
-        margin: 2.4rem auto 0;
-        font-style: italic
-    }
-
-    .feature-quote .q {
-        color: var(--gold)
-    }
-
-    .tgrid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 14px;
-        margin-top: 2.8rem
-    }
-
-    @media (max-width: 880px) {
-        .tgrid {
-            grid-template-columns: repeat(2, 1fr)
-        }
-    }
-
-    @media (max-width: 480px) {
-        .tgrid {
-            grid-template-columns: 1fr 1fr
-        }
-    }
-
-    .tcard {
-        position: relative;
-        aspect-ratio: 9/12;
-        border: 1px solid var(--line);
-        border-radius: 6px;
-        overflow: hidden;
-        cursor: pointer;
-        background: var(--surface)
-    }
-
-    .tcard img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        filter: brightness(.8);
-        transition: filter .3s, transform .6s
-    }
-
-    .tcard:hover img {
-        filter: brightness(.98);
-        transform: scale(1.04)
-    }
-
-    .tcard .play {
-        position: absolute;
-        inset: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center
-    }
-
-    .tcard .play span {
-        width: 54px;
-        height: 54px;
-        border-radius: 50%;
-        background: rgba(233, 162, 59, .92);
-        display: grid;
-        place-items: center;
-        box-shadow: 0 0 0 7px rgba(233, 162, 59, .18)
-    }
-
-    .tcard .play span::before {
-        content: "";
-        border-left: 16px solid var(--ink);
-        border-top: 10px solid transparent;
-        border-bottom: 10px solid transparent;
-        margin-left: 4px
-    }
-
-    .tcard figcaption {
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        padding: .8em .9em;
-        background: linear-gradient(to top, rgba(19, 13, 26, .96), transparent);
-        text-align: left
-    }
-
-    .tcard figcaption b {
-        display: block;
-        font-family: var(--display);
-        font-size: 1rem;
-        font-weight: 600
-    }
-
-    .tcard figcaption small {
-        font-family: var(--mono);
-        font-size: .58rem;
-        letter-spacing: .1em;
-        text-transform: uppercase;
-        color: var(--violet-soft)
-    }
-
-    .lb {
-        position: fixed;
-        inset: 0;
-        z-index: 100;
-        background: rgba(10, 6, 16, .95);
-        display: none;
-        align-items: center;
-        justify-content: center;
-        gap: 18px;
-        padding: 24px
-    }
-
-    .lb.open {
-        display: flex
-    }
-
-    .lb__stage {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: .9rem
-    }
-
-    .lb__inner {
-        height: min(80vh, 720px);
-        aspect-ratio: 9/16;
-        max-width: 90vw;
-        background: #000;
-        border-radius: 12px;
-        overflow: hidden;
-        position: relative
-    }
-
-    .lb iframe {
-        width: 100%;
-        height: 100%;
-        border: 0
-    }
-
-    .lb__meta {
-        font-family: var(--mono);
-        font-size: .72rem;
-        letter-spacing: .1em;
-        color: var(--muted);
-        text-align: center
-    }
-
-    .lb__meta b {
-        font-family: var(--display);
-        font-size: 1.1rem;
-        color: var(--paper);
-        display: block;
-        letter-spacing: 0;
-        margin-bottom: .2rem
-    }
-
-    .lb__arrow {
-        flex: 0 0 auto;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background: rgba(36, 25, 50, .85);
-        border: 1px solid var(--line);
-        color: var(--paper);
-        font-size: 1.7rem;
-        line-height: 1;
-        cursor: pointer;
-        display: grid;
-        place-items: center;
-        transition: background .2s, color .2s
-    }
-
-    .lb__arrow:hover {
-        background: var(--gold);
-        color: var(--ink)
-    }
-
-    .lb__close {
-        position: absolute;
-        top: 18px;
-        right: 20px;
-        color: var(--paper);
-        font-family: var(--mono);
-        font-size: .8rem;
-        letter-spacing: .1em;
-        background: none;
-        border: 1px solid var(--line);
-        padding: .5em .9em;
-        border-radius: 3px;
-        cursor: pointer;
-        z-index: 2
-    }
-
-    @media (max-width: 560px) {
-        .lb {
-            gap: 6px;
-            padding:14px
-        }
-
-        .lb__arrow {
-            width: 40px;
-            height: 40px;
-            font-size:1.4rem
-        }
-
-        .lb__inner {
-            max-width: 78vw
-        }
-    }
-
-    .stack {
-        max-width: 620px;
-        margin: 2.8rem auto 0;
-        text-align: left
-    }
-
-    .stack-item {
-        display: flex;
-        gap: 1rem;
-        align-items: flex-start;
-        padding: 1.1rem 0;
-        border-top: 1px solid var(--line)
-    }
-
-    .stack-item:first-child {
-        border-top: 0
-    }
-
-    .stack-item .ck {
-        flex: 0 0 26px;
-        height: 26px;
-        border-radius: 50%;
-        background: rgba(233, 162, 59, .15);
-        color: var(--gold);
-        display: grid;
-        place-items: center;
-        font-weight: 700;
-        margin-top: 2px
-    }
-
-    .stack-item p {
-        color: var(--muted);
-        font-size: 1rem
-    }
-
-    .stack-item b {
-        color: var(--paper);
-        font-weight: 600;
-        font-family: var(--display)
-    }
-
-    .steps {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1px;
-        margin-top: 3.2rem;
-        background: var(--line);
-        border: 1px solid var(--line)
-    }
-
-    @media (max-width: 760px) {
-        .steps {
-            grid-template-columns: 1fr
-        }
-    }
-
-    .step {
-        background: var(--ink-2);
-        padding: 2.3rem 1.8rem
-    }
-
-    .step__no {
-        font-family: var(--mono);
-        font-size: .8rem;
-        color: var(--gold);
-        letter-spacing: .1em;
-        margin-bottom: 1.2rem
-    }
-
-    .step h3 {
-        font-size: 1.4rem;
-        margin-bottom: .7rem
-    }
-
-    .step p {
-        color: var(--muted);
-        font-size: .95rem
-    }
-
-    .scarcity {
-        font-family: var(--mono);
-        font-size: .76rem;
-        letter-spacing: .14em;
-        text-transform: uppercase;
-        color: var(--gold);
-        border: 1px solid rgba(233, 162, 59, .4);
-        border-radius: 40px;
-        display: inline-block;
-        padding: .6em 1.3em;
-        margin-bottom: 1.6rem
-    }
-
-    .book {
-        position: relative;
-        background: radial-gradient(80% 110% at 50% 0%, rgba(42, 22, 64, .7), transparent 60%), var(--ink)
-    }
-
-    .panel {
-        max-width: 600px;
-        margin: 3rem auto 0;
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        background: var(--ink-2);
-        padding: 2.4rem 2rem;
-        min-height: 330px;
-        text-align: center
-    }
-
-    .progress {
-        display: flex;
-        gap: 6px;
-        margin-bottom: 1.8rem
-    }
-
-    .progress i {
-        flex: 1;
-        height: 3px;
-        background: var(--line);
-        border-radius: 2px;
-        transition: background .3s
-    }
-
-    .progress i.on {
-        background: var(--gold)
-    }
-
-    .qstep {
-        display:none
-    }
-
-    .qstep.active {
-        display: block;
-        animation: fade .35s ease
-    }
-
-    @keyframes fade {
-        from {
-            opacity: 0;
-            transform:translateY(10px)
-        }
-
-        to {
-            opacity: 1;
-            transform: none
-        }
-    }
-
-    .qlabel {
-        font-family: var(--display);
-        font-size: 1.45rem;
-        margin-bottom: .4rem;
-        font-weight: 600
-    }
-
-    .qhint {
-        color: var(--muted);
-        font-size: .92rem;
-        margin-bottom: 1.4rem
-    }
-
-    .field {
-        width: 100%;
-        background: var(--surface);
-        border: 1px solid var(--line);
-        border-radius: 5px;
-        color: var(--paper);
-        font-family: var(--body);
-        font-size: 1.05rem;
-        padding: .95em 1em;
-        outline: none;
-        transition: border .2s;
-        text-align: center
-    }
-
-    .field:focus {
-        border-color: var(--violet-soft)
-    }
-
-    .phone-row {
-        display: flex;
-        gap:8px
-    }
-
-    .phone-row select {
-        flex: 0 0 128px;
-        text-align: left
-    }
-
-    .choice {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 12px
-    }
-
-    @media (max-width: 480px) {
-        .choice {
-            grid-template-columns: 1fr
-        }
-    }
-
-    .choice button {
-        background: var(--surface);
-        border: 1px solid var(--line);
-        border-radius: 6px;
-        color: var(--paper);
-        padding: 1.3em 1em;
-        font-family: var(--body);
-        font-size: 1rem;
-        cursor: pointer;
-        transition: border .2s, background .2s
-    }
-
-    .choice button:hover, .choice button.sel {
-        border-color: var(--gold);
-        background: rgba(233, 162, 59, .08)
-    }
-
-    .choice button small {
-        display: block;
-        color: var(--muted);
-        font-size: .82rem;
-        margin-top: .3rem;
-        font-family: var(--mono);
-        letter-spacing: .04em
-    }
-
-    .qnav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 1.8rem
-    }
-
-    .back {
-        background: none;
-        border: none;
-        color: var(--muted);
-        font-family: var(--mono);
-        font-size: .78rem;
-        letter-spacing: .08em;
-        cursor: pointer;
-        text-transform: uppercase
-    }
-
-    .back:hover {
-        color: var(--paper)
-    }
-
-    .err {
-        color: var(--gold-soft);
-        font-family: var(--mono);
-        font-size: .74rem;
-        margin-top: .6rem;
-        min-height: 1em
-    }
-
-    #cal-embed {
-        min-width: 280px;
-        height: 660px
-    }
-
-    .embed-ph {
-        border: 1px dashed var(--line);
-        border-radius: 6px;
-        padding: 2.4rem 1.4rem
-    }
-
-    .embed-ph .plate {
-        display: block;
-        margin-bottom:.9rem
-    }
-
-    .embed-ph p {
-        color: var(--muted);
-        font-size: .92rem;
-        max-width: 42ch;
-        margin: 0 auto
-    }
-
-    .confirm {
-        margin-top: 1.4rem;
-        border: 1px solid rgba(233, 162, 59, .4);
-        background: rgba(233, 162, 59, .06);
-        border-radius: 6px;
-        padding: 1.4rem;
-        text-align: left;
-        font-size: .95rem
-    }
-
-    .confirm b {
-        color:var(--gold-soft)
-    }
-
-    .confirm ul {
-        margin: .7rem 0 0 1.1rem;
-        color:var(--muted)
-    }
-
-    .confirm li {
-        margin-bottom: .35rem
-    }
-
-    .prep-cta {
-        display: none;
-        margin-bottom: 1.4rem;
-        text-align:center
-    }
-
-    .prep-cta.show {
-        display: block;
-        animation: fade .4s ease
-    }
-
-    .magnet {
-        border: 1px solid var(--line);
-        border-radius: 10px;
-        background: linear-gradient(135deg, var(--surface), var(--ink-2));
-        padding: clamp(2rem, 5vw, 3.2rem);
-        max-width: 860px;
-        margin: 0 auto
-    }
-
-    .magnet h2 {
-        font-size: clamp(1.5rem, 3.2vw, 2.2rem);
-        margin-bottom: .9rem
-    }
-
-    .magnet p {
-        color: var(--muted);
-        max-width: 50ch;
-        margin: 0 auto 1.6rem
-    }
-
-    .magnet form {
-        display: flex;
-        gap: 8px;
-        justify-content: center;
-        flex-wrap: wrap;
-        max-width: 520px;
-        margin: 0 auto
-    }
-
-    .magnet .field {
-        flex: 1;
-        min-width: 200px;
-        text-align: left
-    }
-
-    .magnet small {
-        display: block;
-        margin-top: .9rem;
-        color: var(--muted-2);
-        font-family: var(--mono);
-        font-size: .7rem
-    }
-
-    footer {
-        border-top: 1px solid var(--line);
-        padding: 3rem 0 4rem;
-        background: var(--ink)
-    }
-
-    .foot {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 1.6rem
-    }
-
-    .foot img {
-        height: 26px;
-        opacity: .9
-    }
-
-    .foot a {
-        color: var(--muted);
-        text-decoration: none;
-        font-family: var(--mono);
-        font-size: .78rem;
-        letter-spacing: .08em;
-        transition: color .2s
-    }
-
-    .foot a:hover {
-        color: var(--gold)
-    }
-
-    .reveal {
-        opacity: 0;
-        transform: translateY(22px);
-        transition: opacity .7s ease, transform .7s ease
-    }
-
-    .reveal.in {
-        opacity: 1;
-        transform: none
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-        .reveal {
-            opacity: 1;
-            transform: none;
-            transition:none
-        }
-
-        html {
-            scroll-behavior: auto
-        }
-    }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Travalor — Claim Your FREE Artist Level-Up Session</title>
+<meta name="description" content="Production, mixing and full artist development under one roof — built around your vision, delivered on a timeline we agree on in writing. Hip-hop, R&B, EDM. In studio or remote. Claim your FREE 30-minute Artist Level-Up Session." />
+<link rel="canonical" href="https://YOUR-DOMAIN.com/" /><!-- ▸ EDIT -->
+
+<!-- ▸ EDIT SEO/SOCIAL — Open Graph + Twitter (image is what shows when the link is shared) -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Travalor — Claim Your FREE Artist Level-Up Session" />
+<meta property="og:description" content="Production, mixing and artist development under one roof. Built around your vision, delivered on a timeline in writing." />
+<meta property="og:image" content="https://YOUR-DOMAIN.com/og-image.jpg" />
+<meta property="og:url" content="https://YOUR-DOMAIN.com/" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<!-- ▸ EDIT SCHEMA — helps Google understand the business (good for the SEO build-out later) -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Travalor","description":"Music production, mix engineering and artist development for independent artists. Hip-hop, R&B, EDM.","url":"https://YOUR-DOMAIN.com/","image":"https://YOUR-DOMAIN.com/og-image.jpg","areaServed":"Worldwide (remote) and Sydney, Australia","serviceType":["Music production","Mix engineering","Artist development"],"priceRange":"$$"}
+</script>
+
+<!-- ============================================================
+     SWAP-IN CHECKLIST  (search for  ▸ EDIT )
+     LOGO · HERO VIDEO · SUB-HERO 4 IMAGES · MECHANISM IMAGE · ABOUT PHOTO
+     TESTIMONIAL videos · LEAD ENDPOINT · CONTACT · SEO/DOMAIN
+     Calendly link is already set (travalor/30min).
+     ============================================================ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,900&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css" />
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<!-- ▸ EDIT ANALYTICS (GA4 / Plausible / Fathom)
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXX');</script>
+-->
+
+<style>
+  :root{
+    --ink:#130D1A;--ink-2:#1B1326;--surface:#241932;--paper:#F1ECF6;
+    --muted:#A99BB8;--muted-2:#6E607E;
+    --violet:#8A3FD1;--violet-soft:#B583E6;--violet-deep:#2A1640;
+    --gold:#E9A23B;--gold-soft:#F0BD6E;
+    --line:rgba(241,236,246,0.12);--maxw:1080px;
+    --display:"Fraunces",Georgia,serif;--body:"Space Grotesk",system-ui,sans-serif;--mono:"Space Mono",ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--ink);color:var(--paper);font-family:var(--body);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;text-align:center}
+  ::selection{background:var(--gold);color:var(--ink)}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .plate{font-family:var(--mono);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--violet-soft)}
+  h1,h2,h3{font-family:var(--display);line-height:1.06;letter-spacing:-0.015em}
+  a{color:inherit}
+  .hl{background:linear-gradient(transparent 58%,rgba(233,162,59,.4) 58%);padding:0 .08em}
+  em.hl{font-style:normal}
+
+  .btn{display:inline-flex;align-items:center;gap:.6em;font-family:var(--body);font-weight:700;font-size:1rem;padding:1.05em 1.9em;border-radius:4px;background:var(--gold);color:var(--ink);border:1px solid var(--gold);text-decoration:none;cursor:pointer;transition:transform .25s,box-shadow .25s}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 14px 44px -12px rgba(233,162,59,.6)}
+  .btn .arrow{transition:transform .25s}.btn:hover .arrow{transform:translateX(4px)}
+  .btn--lg{font-size:1.12rem;padding:1.15em 2.2em}
+  .btn--ghost{background:transparent;color:var(--paper);border-color:var(--line)}
+  .cta-block{margin-top:2.8rem}
+  .cta-rea{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-top:1rem}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:60;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;background:linear-gradient(to bottom,rgba(19,13,26,.92),rgba(19,13,26,0));backdrop-filter:blur(3px)}
+  .brand{display:inline-flex;align-items:center;text-decoration:none;font-family:var(--display);font-weight:600;font-size:1.3rem}
+  .brand span{color:var(--violet-soft)}
+  .brand img{height:32px;width:auto;display:block}
+  nav .btn{padding:.65em 1.15em;font-size:.8rem}
+  @media(max-width:680px){nav .nav-cta{display:none}}
+
+  .hero{position:relative;min-height:100svh;display:flex;align-items:center;justify-content:center;padding:110px 0 70px;overflow:hidden}
+  .hero__media{position:absolute;inset:0;z-index:0}
+  .hero__media video,.hero__media img{width:100%;height:100%;object-fit:cover;filter:saturate(.9) contrast(1.05)}
+  .hero__media::after{content:"";position:absolute;inset:0;background:radial-gradient(90% 80% at 50% 30%,rgba(42,22,64,.55),transparent 70%),linear-gradient(to bottom,rgba(19,13,26,.78),rgba(19,13,26,.62) 50%,var(--ink) 96%)}
+  .hero__inner{position:relative;z-index:2}
+  .prehead{display:inline-block;font-family:var(--mono);font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(233,162,59,.35);border-radius:40px;padding:.55em 1.2em;margin-bottom:1.6rem}
+  .hero h1{font-size:clamp(2.5rem,6.6vw,5rem);font-weight:600;max-width:20ch;margin:0 auto 1.3rem}
+  .hero__sub{font-size:clamp(1.05rem,1.8vw,1.3rem);max-width:54ch;margin:0 auto;opacity:.95}
+  .chips{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin-top:2.2rem}
+  .chip{font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;color:var(--muted);border:1px solid var(--line);border-radius:40px;padding:.5em 1em}
+  .chip b{color:var(--violet-soft);font-weight:400}
+
+  section{padding:clamp(70px,10vw,128px) 0}
+  .bg-2{background:var(--ink-2)}
+  .eyebrow{margin-bottom:1.2rem;display:inline-block}
+  .section-head{font-size:clamp(1.8rem,4.2vw,3rem);font-weight:600;max-width:22ch;margin:0 auto 1.3rem}
+  .lead{color:var(--muted);max-width:58ch;margin:0 auto;font-size:1.08rem}
+  .body-copy{max-width:60ch;margin:1.4rem auto 0;color:var(--muted)}
+  .body-copy b{color:var(--paper);font-weight:500}
+
+  /* sub-hero image strip (King Kong style) */
+  .strip-band{padding:34px 0;background:var(--ink-2)}
+  .subhero-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:820px;margin:0 auto}
+  .subhero-strip img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:6px;border:1px solid var(--line);filter:brightness(.92) saturate(.95)}
+  @media(max-width:600px){.subhero-strip{grid-template-columns:1fr 1fr}}
+
+  .media-band{margin:3rem auto 0;max-width:820px;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+  .media-band img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover;filter:saturate(.95)}
+
+  .villain{margin:2.6rem auto 0;max-width:64ch;border:1px solid var(--line);border-left:3px solid var(--gold);background:var(--surface);padding:1.8rem;text-align:left;border-radius:4px}
+  .villain b{color:var(--gold-soft)}
+
+  .pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:3rem}
+  @media(max-width:760px){.pillars{grid-template-columns:1fr 1fr}}
+  .pillar{border:1px solid var(--line);padding:1.7rem 1.3rem;border-radius:4px;background:var(--surface)}
+  .pillar .n{font-family:var(--mono);font-size:.72rem;color:var(--gold);letter-spacing:.1em}
+  .pillar h3{font-size:1.2rem;margin:.7rem 0 .4rem;font-weight:600}
+  .pillar p{font-size:.92rem;color:var(--muted)}
+
+  /* about */
+  .about{display:grid;grid-template-columns:0.85fr 1.15fr;gap:2.6rem;align-items:center;text-align:left;max-width:920px;margin:0 auto}
+  @media(max-width:760px){.about{grid-template-columns:1fr;text-align:center}}
+  .about img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:10px;border:1px solid var(--line)}
+  .about h2{font-size:clamp(1.7rem,3.6vw,2.6rem);font-weight:600;margin-bottom:1.1rem}
+  .about p{color:var(--muted);margin-bottom:1rem}
+  .about p b{color:var(--paper);font-weight:500}
+
+  .cmp{margin:3rem auto 0;max-width:780px;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+  .cmp .row{display:grid;grid-template-columns:1fr 110px 130px;align-items:center;border-top:1px solid var(--line)}
+  .cmp .row:first-child{border-top:0}
+  .cmp .head{background:var(--violet-deep);font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase}
+  .cmp .c{padding:1.05rem 1rem;text-align:center;font-family:var(--mono);font-size:.74rem}
+  .cmp .crit{text-align:left;font-family:var(--body);font-size:.98rem;color:var(--paper);padding-left:1.3rem}
+  .cmp .me{color:var(--gold)}.cmp .them{color:var(--muted-2)}
+  .cmp .yes::before{content:"✓ ";font-weight:700}.cmp .no::before{content:"✕ ";}
+  @media(max-width:560px){.cmp .row{grid-template-columns:1fr 56px 64px}.cmp .crit{font-size:.86rem;padding-left:.9rem}.cmp .c{padding:.9rem .4rem}}
+
+  .work-quote{font-family:var(--display);font-size:clamp(1.45rem,3.2vw,2.2rem);line-height:1.3;max-width:30ch;margin:0 auto}
+  .work-quote b{color:var(--violet-soft);font-weight:500}
+
+  .feature-quote{font-family:var(--display);font-size:clamp(1.4rem,3vw,2.1rem);line-height:1.35;max-width:24ch;margin:2.4rem auto 0}
+  .feature-quote .q{color:var(--gold)}
+  .tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:2.8rem}
+  @media(max-width:760px){.tgrid{grid-template-columns:1fr}}
+  .tcard{position:relative;aspect-ratio:9/12;border:1px solid var(--line);border-radius:5px;overflow:hidden;cursor:pointer;background:var(--surface)}
+  .tcard img{width:100%;height:100%;object-fit:cover;filter:brightness(.78);transition:filter .3s,transform .6s}
+  .tcard:hover img{filter:brightness(.96);transform:scale(1.03)}
+  .tcard .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+  .tcard .play span{width:62px;height:62px;border-radius:50%;background:rgba(233,162,59,.92);display:grid;place-items:center;box-shadow:0 0 0 8px rgba(233,162,59,.18)}
+  .tcard .play span::before{content:"";border-left:18px solid var(--ink);border-top:11px solid transparent;border-bottom:11px solid transparent;margin-left:4px}
+  .tcard figcaption{position:absolute;left:0;bottom:0;width:100%;padding:.9em 1em;background:linear-gradient(to top,rgba(19,13,26,.95),transparent)}
+  .tcard figcaption b{display:block;font-family:var(--display);font-size:1.05rem}
+  .tcard figcaption small{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--violet-soft)}
+
+  .lb{position:fixed;inset:0;z-index:100;background:rgba(10,6,16,.93);display:none;align-items:center;justify-content:center;padding:24px}
+  .lb.open{display:flex}
+  .lb__inner{width:min(900px,100%);aspect-ratio:16/9;background:#000;border-radius:6px;overflow:hidden;position:relative}
+  .lb video,.lb iframe{width:100%;height:100%;border:0}
+  .lb__close{position:absolute;top:-44px;right:0;color:var(--paper);font-family:var(--mono);font-size:.8rem;letter-spacing:.1em;background:none;border:1px solid var(--line);padding:.5em .9em;border-radius:3px;cursor:pointer}
+
+  .stack{max-width:620px;margin:2.8rem auto 0;text-align:left}
+  .stack-item{display:flex;gap:1rem;align-items:flex-start;padding:1.1rem 0;border-top:1px solid var(--line)}
+  .stack-item:first-child{border-top:0}
+  .stack-item .ck{flex:0 0 26px;height:26px;border-radius:50%;background:rgba(233,162,59,.15);color:var(--gold);display:grid;place-items:center;font-weight:700;margin-top:2px}
+  .stack-item p{color:var(--muted);font-size:1rem}
+  .stack-item b{color:var(--paper);font-weight:600;font-family:var(--display)}
+
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:3.2rem;background:var(--line);border:1px solid var(--line)}
+  @media(max-width:760px){.steps{grid-template-columns:1fr}}
+  .step{background:var(--ink-2);padding:2.3rem 1.8rem}
+  .step__no{font-family:var(--mono);font-size:.8rem;color:var(--gold);letter-spacing:.1em;margin-bottom:1.2rem}
+  .step h3{font-size:1.4rem;margin-bottom:.7rem;font-weight:600}
+  .step p{color:var(--muted);font-size:.95rem}
+
+  .scarcity{font-family:var(--mono);font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(233,162,59,.4);border-radius:40px;display:inline-block;padding:.6em 1.3em;margin-bottom:1.6rem}
+  .book{position:relative;background:radial-gradient(80% 110% at 50% 0%,rgba(42,22,64,.7),transparent 60%),var(--ink)}
+  .panel{max-width:600px;margin:3rem auto 0;border:1px solid var(--line);border-radius:8px;background:var(--ink-2);padding:2.4rem 2rem;min-height:330px;text-align:center}
+  .progress{display:flex;gap:6px;margin-bottom:1.8rem}
+  .progress i{flex:1;height:3px;background:var(--line);border-radius:2px;transition:background .3s}
+  .progress i.on{background:var(--gold)}
+  .qstep{display:none}.qstep.active{display:block;animation:fade .35s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .qlabel{font-family:var(--display);font-size:1.5rem;margin-bottom:.4rem;font-weight:600}
+  .qhint{color:var(--muted);font-size:.92rem;margin-bottom:1.4rem}
+  .field{width:100%;background:var(--surface);border:1px solid var(--line);border-radius:5px;color:var(--paper);font-family:var(--body);font-size:1.05rem;padding:.95em 1em;outline:none;transition:border .2s;text-align:center}
+  .field:focus{border-color:var(--violet-soft)}
+  .phone-row{display:flex;gap:8px}.phone-row select{flex:0 0 128px;text-align:left}
+  .choice{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:480px){.choice{grid-template-columns:1fr}}
+  .choice button{background:var(--surface);border:1px solid var(--line);border-radius:6px;color:var(--paper);padding:1.3em 1em;font-family:var(--body);font-size:1rem;cursor:pointer;transition:border .2s,background .2s}
+  .choice button:hover,.choice button.sel{border-color:var(--gold);background:rgba(233,162,59,.08)}
+  .choice button small{display:block;color:var(--muted);font-size:.82rem;margin-top:.3rem;font-family:var(--mono);letter-spacing:.04em}
+  .qnav{display:flex;justify-content:space-between;align-items:center;margin-top:1.8rem}
+  .back{background:none;border:none;color:var(--muted);font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;cursor:pointer;text-transform:uppercase}
+  .back:hover{color:var(--paper)}
+  .err{color:var(--gold-soft);font-family:var(--mono);font-size:.74rem;margin-top:.6rem;min-height:1em}
+  #cal-embed{min-width:280px;height:660px}
+  .embed-ph{border:1px dashed var(--line);border-radius:6px;padding:2.4rem 1.4rem}
+  .embed-ph .plate{display:block;margin-bottom:.9rem}.embed-ph p{color:var(--muted);font-size:.92rem;max-width:42ch;margin:0 auto}
+  .confirm{margin-top:1.4rem;border:1px solid rgba(233,162,59,.4);background:rgba(233,162,59,.06);border-radius:6px;padding:1.4rem;text-align:left;font-size:.95rem}
+  .confirm b{color:var(--gold-soft)}.confirm ul{margin:.7rem 0 0 1.1rem;color:var(--muted)}.confirm li{margin-bottom:.35rem}
+  .prep-cta{display:none;margin-bottom:1.4rem;text-align:center}
+  .prep-cta.show{display:block;animation:fade .4s ease}
+
+  .magnet{border:1px solid var(--line);border-radius:10px;background:linear-gradient(135deg,var(--surface),var(--ink-2));padding:clamp(2rem,5vw,3.2rem);max-width:860px;margin:0 auto}
+  .magnet h2{font-size:clamp(1.5rem,3.2vw,2.2rem);margin-bottom:.9rem;font-weight:600}
+  .magnet p{color:var(--muted);max-width:50ch;margin:0 auto 1.6rem}
+  .magnet form{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;max-width:520px;margin:0 auto}
+  .magnet .field{flex:1;min-width:200px;text-align:left}
+  .magnet small{display:block;margin-top:.9rem;color:var(--muted-2);font-family:var(--mono);font-size:.7rem}
+
+  footer{border-top:1px solid var(--line);padding:3rem 0 4rem;background:var(--ink)}
+  .foot{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:1.6rem}
+  .foot a{color:var(--muted);text-decoration:none;font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;transition:color .2s}
+  .foot a:hover{color:var(--gold)}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
 </head>
 <body>
 
-    <nav>
-        <a class="brand" href="#top">
-            <img src="logo.png" alt="Travalor"/>
-        </a>
-        <a class="btn nav-cta" href="#book" data-cta="nav">
-            Claim your FREE session 
-            <span class="arrow">→</span>
-        </a>
-    </nav>
+<nav>
+  <!-- ▸ EDIT LOGO: <a class="brand" href="#top"><img src="logo.png" alt="Travalor" /></a> -->
+  <a class="brand" href="#top">Trava<span>lor</span></a>
+  <a class="btn nav-cta" href="#book" data-cta="nav">Claim your FREE session <span class="arrow">→</span></a>
+</nav>
 
-    <!-- HERO -->
-    <header class="hero" id="top">
-        <div class="hero__media">
-            <img src="hero.jpg" alt="Travalor mixing in the studio" fetchpriority="high"/>
-        </div>
-        <div class="hero__inner wrap">
-            <span class="prehead">For independent artists done being strung along</span>
-            <h1>
-                Claim your 
-                <em class="hl">FREE 30-minute Artist Level-Up Session</em>
-                 — and leave with a clear plan to finally sound like the artists you look up to.
-            </h1>
-            <p class="hero__sub">Production, mixing and full artist development under one roof — built around your vision and delivered on a timeline we agree on in writing. Hip-hop, R&amp;B, EDM and beyond. In the studio or fully remote.</p>
-            <div class="cta-block">
-                <a class="btn btn--lg" href="#book" data-cta="hero">
-                    Claim your FREE session 
-                    <span class="arrow">→</span>
-                </a>
-                <p class="cta-rea">Free · 30 minutes · Zoom or phone · No pressure</p>
-            </div>
-            <div class="chips">
-                <span class="chip">
-                    <b>Genres:</b>
-                     Hip-hop · R&amp;B · EDM
-                </span>
-                <span class="chip">
-                    <b>Sessions:</b>
-                     In-studio or remote
-                </span>
-                <span class="chip">
-                    <b>Always:</b>
-                     Fixed timelines, in writing
-                </span>
-                <span class="chip">
-                    <b>Standard:</b>
-                     Sync-trained mixing ear
-                </span>
-            </div>
-        </div>
-    </header>
-
-    <!-- SUB-HERO STRIP -->
-    <div class="strip-band">
-        <div class="subhero-strip">
-            <img src="bts-1.jpg" alt="In the studio with an artist" loading="lazy"/>
-            <img src="bts-2.jpg" alt="Tracking vocals" loading="lazy"/>
-            <img src="bts-3.jpg" alt="Artist development" loading="lazy"/>
-            <img src="bts-4.jpg" alt="Artist portrait" loading="lazy"/>
-        </div>
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="hero__media">
+    <!-- ▸ EDIT HERO VIDEO + POSTER (muted BTS loop) -->
+    <video autoplay muted loop playsinline poster="hero-poster.jpg"><source src="hero-loop.mp4" type="video/mp4" /></video>
+  </div>
+  <div class="hero__inner wrap">
+    <span class="prehead">For independent artists done being strung along</span>
+    <h1>Claim your <em class="hl">FREE 30-minute Artist Level-Up Session</em> — and leave with a clear plan to finally sound like the artists you look up to.</h1>
+    <p class="hero__sub">Production, mixing and full artist development under one roof — built around your vision and delivered on a timeline we agree on in writing. Hip-hop, R&amp;B, EDM and beyond. In the studio or fully remote.</p>
+    <div class="cta-block"><a class="btn btn--lg" href="#book" data-cta="hero">Claim your FREE session <span class="arrow">→</span></a><p class="cta-rea">Free · 30 minutes · Zoom or phone · No pressure</p></div>
+    <div class="chips">
+      <span class="chip"><b>Genres:</b> Hip-hop · R&amp;B · EDM</span>
+      <span class="chip"><b>Sessions:</b> In-studio or remote</span>
+      <span class="chip"><b>Always:</b> Fixed timelines, in writing</span>
+      <span class="chip"><b>Standard:</b> Sync-trained mixing ear</span>
     </div>
+  </div>
+</header>
 
-    <!-- PROBLEM -->
-    <section class="section-bg" style="background-image:url('bg-problem.jpg')">
-        <!-- ▸ EDIT BG -->
-        <div class="wrap">
-            <p class="plate eyebrow reveal">Sound familiar?</p>
-            <h2 class="section-head reveal">You've worked with producers who ghosted you, strung one song out for months, and cared more about the cheque than your sound.</h2>
-            <p class="body-copy reveal">Maybe you brought a clear reference and got handed a recycled beat. Maybe a single song dragged on for four or five months. Maybe everything happened over email and you never felt like a priority. You're not imagining it — and it's not your fault.</p>
-            <div class="villain reveal">
-                Here's why it keeps happening: 
-                <b>anyone can call themselves a producer.</b>
-                 No standard, no accountability. So the people optimising for volume — more clients, more deposits, more half-finished songs — drown out the ones who actually sit down to understand your vision. The fix isn't another producer. It's a partner who runs the process the way it should be run.
-            </div>
-            <div class="cta-block reveal">
-                <a class="btn btn--lg" href="#book" data-cta="problem">
-                    Claim your FREE session 
-                    <span class="arrow">→</span>
-                </a>
-                <p class="cta-rea">Free · 30 minutes · Zoom or phone · No pressure</p>
-            </div>
-        </div>
-    </section>
+<!-- SUB-HERO IMAGE STRIP -->
+<div class="strip-band">
+  <!-- ▸ EDIT SUB-HERO IMAGES — 4 BTS stills. Recommended: (1) you at the console mid-session,
+       (2) an artist tracking vocals (mic + headphones), (3) warm gear/room detail,
+       (4) a candid laughing/collaboration moment (shows the vibe). Shoot these yourself — it's your edge. -->
+  <div class="subhero-strip">
+    <img src="bts-1.jpg" alt="In session at the console" />
+    <img src="bts-2.jpg" alt="Tracking vocals" />
+    <img src="bts-3.jpg" alt="The studio" />
+    <img src="bts-4.jpg" alt="Collaborating with an artist" />
+  </div>
+</div>
 
-    <!-- MECHANISM -->
-    <section class="bg-2">
-        <div class="wrap">
-            <img src="logomark.png" class="mark-divider reveal" alt=""/>
-            <p class="plate eyebrow reveal">What makes this different</p>
-            <h2 class="section-head reveal">I develop artists, not just tracks.</h2>
-            <p class="lead reveal">Anyone can press record. Fewer people can help you figure out who you actually are — your sound, your image, your story, and the catalog that ties it all together. That's the work I care about.</p>
-            <div class="pillars">
-                <div class="pillar reveal">
-                    <div class="n">01</div>
-                    <h3>Sound</h3>
-                    <p>Production and mixing that finally measures up to the artists you look up to.</p>
-                </div>
-                <div class="pillar reveal">
-                    <div class="n">02</div>
-                    <h3>Identity</h3>
-                    <p>We pin down your sonic identity so your releases feel like one body of work.</p>
-                </div>
-                <div class="pillar reveal">
-                    <div class="n">03</div>
-                    <h3>Image</h3>
-                    <p>Photo &amp; video direction, on select packages, so your visuals match the music.</p>
-                </div>
-                <div class="pillar reveal">
-                    <div class="n">04</div>
-                    <h3>Career</h3>
-                    <p>Catalog, releases and shows — moving you forward, not in circles.</p>
-                </div>
-            </div>
-            <div class="media-band reveal">
-                <img src="mechanism.jpg" alt="Nebulara — Tick Tock cover, produced by Travalor" loading="lazy"/>
-            </div>
-            <p class="body-copy reveal">
-                I've spent years in 
-                <b>TV and film</b>
-                 doing photography and videography, so visual identity is something I can bring into select packages — because a great record with weak visuals still gets scrolled past. I keep that side selective on purpose, so it stays high quality and fast.
-            </p>
-            <div class="cta-block reveal">
-                <a class="btn btn--lg" href="#book" data-cta="mechanism">
-                    Claim your FREE session 
-                    <span class="arrow">→</span>
-                </a>
-                <p class="cta-rea">Free · 30 minutes · Zoom or phone · No pressure</p>
-            </div>
-        </div>
-    </section>
+<!-- PROBLEM -->
+<section>
+  <div class="wrap">
+    <p class="plate eyebrow reveal">Sound familiar?</p>
+    <h2 class="section-head reveal">You've worked with producers who ghosted you, strung one song out for months, and cared more about the cheque than your sound.</h2>
+    <p class="body-copy reveal">Maybe you brought a clear reference and got handed a recycled beat. Maybe a single song dragged on for four or five months. Maybe everything happened over email and you never felt like a priority. You're not imagining it — and it's not your fault.</p>
+    <div class="villain reveal">Here's why it keeps happening: <b>anyone can call themselves a producer.</b> No standard, no accountability. So the people optimising for volume — more clients, more deposits, more half-finished songs — drown out the ones who actually sit down to understand your vision. The fix isn't another producer. It's a partner who runs the process the way it should be run.</div>
+    <div class="cta-block reveal"><a class="btn btn--lg" href="#book" data-cta="problem">Claim your FREE session <span class="arrow">→</span></a><p class="cta-rea">Free · 30 minutes · Zoom or phone · No pressure</p></div>
+  </div>
+</section>
 
-    <!-- ABOUT -->
-    <section>
-        <div class="wrap">
-            <div class="about">
-                <img src="travalor-portrait.jpg" alt="Travalor" class="reveal" loading="lazy"/>
-                <div>
-                    <p class="plate" style="margin-bottom:1rem">Who you'll be working with</p>
-                    <h2 class="reveal">Hi, I'm Travalor.</h2>
-                    <p class="reveal">
-                        Producer, mix engineer and artist developer. I've been making music for 
-                        <b>over 20 years</b>
-                        , and I've also spent years in 
-                        <b>TV and film</b>
-                         doing photography and videography for brands and artists — so I don't just think about your record, I think about your whole picture: the sound, the visuals, the story, the catalog.
-                    </p>
-                    <p class="reveal">
-                        My ear is trained on 
-                        <b>sync and licensing standards</b>
-                        , so I know what a finished, releasable record is supposed to sound like. And I'd rather do a handful of projects properly than churn through many at arm's length. If we work together, you're not a line item — you're the project I'm focused on.
-                    </p>
-                    <div class="cta-block reveal" style="margin-top:1.6rem">
-                        <a class="btn" href="#book" data-cta="about">
-                            Let's talk 
-                            <span class="arrow">→</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- COMPARISON -->
-    <section class="bg-2">
-        <div class="wrap">
-            <p class="plate eyebrow reveal">Working with me vs a typical producer</p>
-            <h2 class="section-head reveal">The difference is the process — not just the gear.</h2>
-            <div class="cmp reveal">
-                <div class="row head">
-                    <div class="c crit" style="color:var(--violet-soft)">What you get</div>
-                    <div class="c me">Me</div>
-                    <div class="c them">Typical</div>
-                </div>
-                <div class="row">
-                    <div class="c crit">A session to define your vision before we touch a beat</div>
-                    <div class="c me yes"></div>
-                    <div class="c them no"></div>
-                </div>
-                <div class="row">
-                    <div class="c crit">Fixed scope &amp; timeline, in writing</div>
-                    <div class="c me yes"></div>
-                    <div class="c them no"></div>
-                </div>
-                <div class="row">
-                    <div class="c crit">Production AND mixing under one roof</div>
-                    <div class="c me yes"></div>
-                    <div class="c them no"></div>
-                </div>
-                <div class="row">
-                    <div class="c crit">In-studio or guided remote vocal sessions</div>
-                    <div class="c me yes"></div>
-                    <div class="c them no"></div>
-                </div>
-                <div class="row">
-                    <div class="c crit">Artist development beyond the track</div>
-                    <div class="c me yes"></div>
-                    <div class="c them no"></div>
-                </div>
-                <div class="row">
-                    <div class="c crit">Treated like a priority, not a side job</div>
-                    <div class="c me yes"></div>
-                    <div class="c them no"></div>
-                </div>
-            </div>
-            <div class="cta-block reveal">
-                <a class="btn btn--lg" href="#book" data-cta="comparison">
-                    Claim your FREE session 
-                    <span class="arrow">→</span>
-                </a>
-                <p class="cta-rea">Free · 30 minutes · Zoom or phone · No pressure</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- HOW I WORK -->
-    <section class="section-bg" style="background-image:url('bg-howiwork.jpg')">
-        <!-- ▸ EDIT BG -->
-        <div class="wrap">
-            <p class="plate eyebrow reveal">An honest heads-up</p>
-            <p class="work-quote reveal">
-                I prioritise my current artists' work first, so I only take on a few new artists at a time. 
-                <b>That means not everyone who books will be the right fit</b>
-                 — and that's deliberate. It's the only way I can give a project the attention it actually needs to come out right. The free session is where we both find out if it's a yes.
-            </p>
-            <div class="cta-block reveal">
-                <a class="btn btn--lg" href="#book" data-cta="howiwork">
-                    See if we're a fit 
-                    <span class="arrow">→</span>
-                </a>
-                <p class="cta-rea">Free · 30 minutes · Zoom or phone · No pressure</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- TESTIMONIALS -->
-    <section class="bg-2">
-        <div class="wrap">
-            <p class="plate eyebrow reveal">In their words</p>
-            <h2 class="section-head reveal">Artists I've grown with.</h2>
-            <p class="feature-quote reveal">
-                <span class="q">&ldquo;</span>
-                He actually got my vision — and moved at the speed I needed. First time I've finished a project and been proud of it.
-                <span class="q">&rdquo;</span>
-            </p>
-            <!-- Testimonials render here from the TESTIMONIALS array in the script below (easy to add/remove). -->
-            <div class="tgrid" id="tgrid"></div>
-            <div class="cta-block reveal">
-                <a class="btn btn--lg" href="#book" data-cta="testimonials">
-                    Claim your FREE session 
-                    <span class="arrow">→</span>
-                </a>
-                <p class="cta-rea">Free · 30 minutes · Zoom or phone · No pressure</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- VALUE STACK -->
-    <section>
-        <div class="wrap">
-            <img src="logomark.png" class="mark-divider reveal" alt=""/>
-            <p class="plate eyebrow reveal">What you'll walk away with</p>
-            <h2 class="section-head reveal">Here's exactly what your free session covers.</h2>
-            <p class="lead reveal">No pitch deck, no hard sell — just real, usable direction for your music.</p>
-            <div class="stack">
-                <div class="stack-item reveal">
-                    <span class="ck">✓</span>
-                    <p>
-                        <b>An honest read on your current sound</b>
-                         — what's working and what's quietly holding your releases back.
-                    </p>
-                </div>
-                <div class="stack-item reveal">
-                    <span class="ck">✓</span>
-                    <p>
-                        <b>The reference gap</b>
-                         — what actually sits between your music and the artists you look up to.
-                    </p>
-                </div>
-                <div class="stack-item reveal">
-                    <span class="ck">✓</span>
-                    <p>
-                        <b>A simple plan for your next release or EP</b>
-                         — with a realistic timeline you can hold me to.
-                    </p>
-                </div>
-                <div class="stack-item reveal">
-                    <span class="ck">✓</span>
-                    <p>
-                        <b>A straight answer on fit</b>
-                         — whether I'm the right person to build this with you.
-                    </p>
-                </div>
-                <div class="stack-item reveal">
-                    <span class="ck">✓</span>
-                    <p>
-                        <b>Your options if we move forward</b>
-                         — including the Travalor Pack rate for ongoing collaborators.
-                    </p>
-                </div>
-            </div>
-            <div class="cta-block reveal">
-                <a class="btn btn--lg" href="#book" data-cta="valuestack">
-                    Claim your FREE session 
-                    <span class="arrow">→</span>
-                </a>
-                <p class="cta-rea">Free · 30 minutes · Zoom or phone · No pressure</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- PROCESS -->
-    <section class="bg-2">
-        <div class="wrap">
-            <p class="plate eyebrow reveal">Just 3 steps</p>
-            <h2 class="section-head reveal">From scattered ideas to a sound you own.</h2>
-            <div class="steps">
-                <div class="step reveal">
-                    <p class="step__no">01 / Discovery</p>
-                    <h3>The free session</h3>
-                    <p>We talk vision, goals, references and what's gone wrong before — and figure out if we're the right fit to build this together.</p>
-                </div>
-                <div class="step reveal">
-                    <p class="step__no">02 / Blueprint</p>
-                    <h3>Your plan &amp; packages</h3>
-                    <p>I map your project to a clear scope, timeline and price — single, EP, or the Travalor Pack rate. You'll know exactly what you get and when.</p>
-                </div>
-                <div class="step reveal">
-                    <p class="step__no">03 / Build</p>
-                    <h3>On schedule, your way</h3>
-                    <p>We produce and mix under one roof — in studio or guided remotely — hitting the milestones we agreed, so you're releasing and booking shows.</p>
-                </div>
-            </div>
-            <div class="cta-block reveal">
-                <a class="btn btn--lg" href="#book" data-cta="process">
-                    Claim your FREE session 
-                    <span class="arrow">→</span>
-                </a>
-                <p class="cta-rea">Free · 30 minutes · Zoom or phone · No pressure</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- BOOKING -->
-    <section class="book" id="book">
-        <div class="wrap">
-            <span class="scarcity reveal">Limited — only a few new artists taken each month</span>
-            <h2 class="section-head reveal">Claim your FREE 30-minute Artist Level-Up Session.</h2>
-            <p class="lead reveal">Takes under a minute. Tell me a little about you, then pick a time — Zoom or phone, your call.</p>
-        </div>
-
-        <div class="panel reveal" id="panel">
-            <div class="progress" id="prog">
-                <i class="on"></i>
-                <i></i>
-                <i></i>
-                <i></i>
-                <i></i>
-            </div>
-            <form id="bookForm" autocomplete="on" novalidate>
-                <div class="qstep active" data-step="0">
-                    <p class="qlabel">Where should I send your invite?</p>
-                    <p class="qhint">This is where your calendar invite + session details land.</p>
-                    <input class="field" type="email" id="f_email" placeholder="you@email.com"/>
-                    <div class="err" id="e0"></div>
-                </div>
-                <div class="qstep" data-step="1">
-                    <p class="qlabel">And your name?</p>
-                    <p class="qhint">So I know who I'm talking to.</p>
-                    <input class="field" type="text" id="f_name" placeholder="Your name"/>
-                    <div class="err" id="e1"></div>
-                </div>
-                <div class="qstep" data-step="2">
-                    <p class="qlabel">Best number to reach you?</p>
-                    <p class="qhint">Include your country code — I work with artists internationally.</p>
-                    <div class="phone-row">
-                        <select class="field" id="f_code">
-                            <option value="+1">+1 US/CA</option>
-                            <option value="+44">+44 UK</option>
-                            <option value="+61" selected>+61 AU</option>
-                            <option value="+64">+64 NZ</option>
-                            <option value="+353">+353 IE</option>
-                            <option value="+49">+49 DE</option>
-                            <option value="+33">+33 FR</option>
-                            <option value="+34">+34 ES</option>
-                            <option value="+39">+39 IT</option>
-                            <option value="+31">+31 NL</option>
-                            <option value="+46">+46 SE</option>
-                            <option value="+27">+27 ZA</option>
-                            <option value="+91">+91 IN</option>
-                            <option value="+81">+81 JP</option>
-                            <option value="+82">+82 KR</option>
-                            <option value="+65">+65 SG</option>
-                            <option value="+971">+971 AE</option>
-                            <option value="+52">+52 MX</option>
-                            <option value="+55">+55 BR</option>
-                            <option value="+63">+63 PH</option>
-                            <option value="+234">+234 NG</option>
-                            <option value="other">Other</option>
-                        </select>
-                        <input class="field" type="tel" id="f_phone" placeholder="Phone number"/>
-                    </div>
-                    <div class="err" id="e2"></div>
-                </div>
-                <div class="qstep" data-step="3">
-                    <p class="qlabel">How do you want to connect?</p>
-                    <p class="qhint">Pick whatever feels easiest.</p>
-                    <div class="choice">
-                        <button type="button" data-val="Zoom" id="c_zoom">
-                            Zoom video
-                            <small>Face to face</small>
-                        </button>
-                        <button type="button" data-val="Phone" id="c_phone">
-                            Phone call
-                            <small>Audio only</small>
-                        </button>
-                    </div>
-                    <div class="err" id="e3"></div>
-                </div>
-                <div class="qstep" data-step="4">
-                    <p class="qlabel">Last thing — how'd you find me?</p>
-                    <p class="qhint">So I can thank whoever sent you.</p>
-                    <select class="field" id="f_ref" style="text-align:left">
-                        <option value="" disabled selected>Choose one…</option>
-                        <option>An artist or friend referred me</option>
-                        <option>Instagram</option>
-                        <option>TikTok</option>
-                        <option>Facebook</option>
-                        <option>YouTube</option>
-                        <option>Google search</option>
-                        <option>Other</option>
-                    </select>
-                    <input class="field" type="text" id="f_refwho" placeholder="Who can I thank? (their name)" style="display:none;margin-top:10px;text-align:left"/>
-                    <div class="err" id="e4"></div>
-                </div>
-                <div class="qnav">
-                    <button type="button" class="back" id="backBtn" style="visibility:hidden">← Back</button>
-                    <button type="button" class="btn" id="nextBtn">
-                        Continue 
-                        <span class="arrow">→</span>
-                    </button>
-                </div>
-            </form>
-
-            <div id="embedwrap" style="display:none">
-                <div class="prep-cta" id="prepCta">
-                    <p class="qlabel" style="margin-bottom:.6rem">You're booked! 🎉 One quick thing…</p>
-                    <p class="qhint" style="margin-bottom:1.1rem">Answer a few short questions so our call is actually useful — takes 2 minutes.</p>
-                    <a class="btn btn--lg" href="prep.html" data-cta="prep">
-                        Complete my pre-call questions 
-                        <span class="arrow">→</span>
-                    </a>
-                </div>
-                <p class="qlabel" id="pickLabel" style="margin-bottom:.5rem">Last step — pick your time 👇</p>
-                <p class="qhint" id="tzNote" style="margin-bottom:1rem">All times show in your own local time zone automatically.</p>
-                <div id="cal-embed">
-                    <div class="embed-ph">
-                        <span class="plate">Calendar loads here</span>
-                        <p>Your Calendly opens here, prefilled with their name &amp; email. They just pick a time.</p>
-                    </div>
-                </div>
-                <div class="confirm">
-                    <b>Important — your booking isn't confirmed yet.</b>
-                    <ul>
-                        <li>
-                            Check your email and 
-                            <b>accept the calendar invite</b>
-                            . No acceptance = no confirmed session.
-                        </li>
-                        <li>
-                            Not in your inbox? Check 
-                            <b>spam / promotions</b>
-                            .
-                        </li>
-                        <li>Add my email to your contacts so session details never get filtered.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- LEAD MAGNET -->
-    <section>
-        <div class="wrap">
-            <div class="magnet reveal">
-                <p class="plate" style="margin-bottom:1rem">Not ready to book? Start here</p>
-                <h2>
-                    11 things most musicians overlook
-                    <br>
-                    (that cost them thousands).
-                </h2>
-                <p>Travalor's free Studio-Ready Checklist — the small things that quietly cost artists thousands of dollars and slow their whole career down. Grab it free.</p>
-                <form id="magnetForm" novalidate>
-                    <input class="field" type="email" id="m_email" placeholder="you@email.com"/>
-                    <button class="btn" type="button" id="m_btn" data-cta="magnet">
-                        Send me the checklist 
-                        <span class="arrow">→</span>
-                    </button>
-                </form>
-                <div class="err" id="m_err" style="text-align:center"></div>
-                <small>No spam. Just the checklist + the occasional thing worth your time.</small>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="wrap foot">
-            <a href="#top">
-                <img src="logo.png" alt="Travalor"/>
-            </a>
-            <a href="https://instagram.com/travalor" target="_blank" rel="noopener">@travalor</a>
-            <a href="#book">Claim your FREE session</a>
-        </div>
-    </footer>
-
-    <div class="lb" id="lb" role="dialog" aria-modal="true">
-        <button class="lb__close" id="lbClose">Close ✕</button>
-        <button class="lb__arrow" id="lbPrev" aria-label="Previous">‹</button>
-        <div class="lb__stage">
-            <div class="lb__inner" id="lbInner"></div>
-            <div class="lb__meta">
-                <b id="lbName"></b>
-                <span id="lbCount"></span>
-            </div>
-        </div>
-        <button class="lb__arrow" id="lbNext" aria-label="Next">›</button>
+<!-- MECHANISM -->
+<section class="bg-2">
+  <div class="wrap">
+    <p class="plate eyebrow reveal">What makes this different</p>
+    <h2 class="section-head reveal">I develop artists, not just tracks.</h2>
+    <p class="lead reveal">Anyone can press record. Fewer people can help you figure out who you actually are — your sound, your image, your story, and the catalog that ties it all together. That's the work I care about.</p>
+    <div class="pillars">
+      <div class="pillar reveal"><div class="n">01</div><h3>Sound</h3><p>Production and mixing that finally measures up to the artists you look up to.</p></div>
+      <div class="pillar reveal"><div class="n">02</div><h3>Identity</h3><p>We pin down your sonic identity so your releases feel like one body of work.</p></div>
+      <div class="pillar reveal"><div class="n">03</div><h3>Image</h3><p>Photo &amp; video direction, on select packages, so your visuals match the music.</p></div>
+      <div class="pillar reveal"><div class="n">04</div><h3>Career</h3><p>Catalog, releases and shows — moving you forward, not in circles.</p></div>
     </div>
+    <!-- ▸ EDIT MECHANISM IMAGE — a strong artist portrait you shot, or a wide studio-session shot. Ties to your photo/video edge. -->
+    <div class="media-band reveal"><img src="mechanism.jpg" alt="Artist development in the studio" /></div>
+    <p class="body-copy reveal">I come from <b>photography and videography</b>, so visual identity is something I bring into select packages — because a great record with weak visuals still gets scrolled past. I keep that side selective on purpose, so it stays high quality and fast.</p>
+    <div class="cta-block reveal"><a class="btn btn--lg" href="#book" data-cta="mechanism">Claim your FREE session <span class="arrow">→</span></a><p class="cta-rea">Free · 30 minutes · Zoom or phone · No pressure</p></div>
+  </div>
+</section>
 
-    <script>
-    /* ============================================================
-         ▸ ONE-TIME SETUP — paste your Make.com webhook URL here and the whole
-         site starts sending leads (booking form + abandons + checklist signups).
-         Leave it as "" and nothing is sent (safe for testing).
-         ============================================================ */
-    var LEAD_ENDPOINT = "https://hook.us2.make.com/iga72fg9gbkn64x9kld0m9caoic5hztj"; /* e.g. "https://hook.eu2.make.com/abc123" */
-    var CHECKLIST_FILE = "Studio-Ready-Checklist.pdf"; /* name the PDF this, in the same folder */
+<!-- ABOUT -->
+<section>
+  <div class="wrap">
+    <div class="about">
+      <!-- ▸ EDIT ABOUT PHOTO — an approachable, well-lit portrait of you in the studio. Real face = trust. -->
+      <img src="travalor-portrait.jpg" alt="Travalor" class="reveal" />
+      <div>
+        <p class="plate" style="margin-bottom:1rem">Who you'll be working with</p>
+        <h2 class="reveal">Hi, I'm Travalor.</h2>
+        <p class="reveal">Producer, mix engineer and artist developer. I came up through <b>photography and videography</b> before music, which is why I don't just think about your record — I think about your whole picture: the sound, the visuals, the story, the catalog.</p>
+        <p class="reveal">My ear is trained on <b>sync and licensing standards</b>, so I know what a finished, releasable record is supposed to sound like. And I'd rather do a handful of projects properly than churn through many at arm's length. If we work together, you're not a line item — you're the project I'm focused on.</p>
+        <div class="cta-block reveal" style="margin-top:1.6rem"><a class="btn" href="#book" data-cta="about">Let's talk <span class="arrow">→</span></a></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    /* ============================================================
-         TESTIMONIALS — add / remove / reorder freely.
-         Each item: { id, name, tag }
-           id  = the code after youtu.be/ or /shorts/ in the YouTube link
-           name= artist name shown on the card
-           tag = small label under the name (edit to taste)
-         The thumbnail and the video both load automatically from the id.
-         ============================================================ */
-    var TESTIMONIALS = [
-    {
-        id: "x9tYnsuxlKU",
-        name: "Nebulara",
-        tag: "▶ Watch"
-    },
-    {
-        id: "VJMZHO0NDUQ",
-        name: "Juleo",
-        tag: "▶ Watch"
-    },
-    {
-        id: "WLPH2h3d5ts",
-        name: "AR Swanson",
-        tag: "▶ Watch"
-    },
-    {
-        id: "S16iMlS-NXE",
-        name: "Zahraé",
-        tag: "▶ Watch"
-    },
-    {
-        id: "4IufVRdyxXM",
-        name: "Alex Grover & Sara Glancy",
-        tag: "▶ Watch"
-    },
-    {
-        id: "ylifx51urvY",
-        name: "Darkk Prince",
-        tag: "▶ Watch"
-    },
-    {
-        id: "eEmieYdxvFo",
-        name: "Neebs",
-        tag: "▶ Watch"
-    },
-    {
-        id: "rKhW5cXquCU",
-        name: "Robert Braxton",
-        tag: "▶ Watch"
+<!-- COMPARISON -->
+<section class="bg-2">
+  <div class="wrap">
+    <p class="plate eyebrow reveal">Working with me vs a typical producer</p>
+    <h2 class="section-head reveal">The difference is the process — not just the gear.</h2>
+    <div class="cmp reveal">
+      <div class="row head"><div class="c crit" style="color:var(--violet-soft)">What you get</div><div class="c me">Me</div><div class="c them">Typical</div></div>
+      <div class="row"><div class="c crit">A session to define your vision before we touch a beat</div><div class="c me yes"></div><div class="c them no"></div></div>
+      <div class="row"><div class="c crit">Fixed scope &amp; timeline, in writing</div><div class="c me yes"></div><div class="c them no"></div></div>
+      <div class="row"><div class="c crit">Production AND mixing under one roof</div><div class="c me yes"></div><div class="c them no"></div></div>
+      <div class="row"><div class="c crit">In-studio or guided remote vocal sessions</div><div class="c me yes"></div><div class="c them no"></div></div>
+      <div class="row"><div class="c crit">Artist development beyond the track</div><div class="c me yes"></div><div class="c them no"></div></div>
+      <div class="row"><div class="c crit">Treated like a priority, not a side job</div><div class="c me yes"></div><div class="c them no"></div></div>
+    </div>
+    <div class="cta-block reveal"><a class="btn btn--lg" href="#book" data-cta="comparison">Claim your FREE session <span class="arrow">→</span></a><p class="cta-rea">Free · 30 minutes · Zoom or phone · No pressure</p></div>
+  </div>
+</section>
+
+<!-- HOW I WORK / SELECTIVITY -->
+<section>
+  <div class="wrap">
+    <p class="plate eyebrow reveal">An honest heads-up</p>
+    <p class="work-quote reveal">I prioritise my current artists' work first, so I only take on a few new artists at a time. <b>That means not everyone who books will be the right fit</b> — and that's deliberate. It's the only way I can give a project the attention it actually needs to come out right. The free session is where we both find out if it's a yes.</p>
+    <div class="cta-block reveal"><a class="btn btn--lg" href="#book" data-cta="howiwork">See if we're a fit <span class="arrow">→</span></a><p class="cta-rea">Free · 30 minutes · Zoom or phone · No pressure</p></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="bg-2">
+  <div class="wrap">
+    <p class="plate eyebrow reveal">In their words</p>
+    <h2 class="section-head reveal">Artists I've grown with.</h2>
+    <p class="feature-quote reveal"><span class="q">&ldquo;</span>He actually got my vision — and moved at the speed I needed. First time I've finished a project and been proud of it.<span class="q">&rdquo;</span></p>
+    <div class="tgrid">
+      <!-- ▸ EDIT TESTIMONIALS — lead with strongest. data-video = MP4 URL (or swap to a YouTube/Vimeo iframe in JS). -->
+      <figure class="tcard reveal" data-video="testimonial-1.mp4"><img src="testimonial-1-poster.jpg" alt="" /><div class="play"><span></span></div><figcaption><b>Artist name</b><small>EP · Hip-hop</small></figcaption></figure>
+      <figure class="tcard reveal" data-video="testimonial-2.mp4"><img src="testimonial-2-poster.jpg" alt="" /><div class="play"><span></span></div><figcaption><b>Artist name</b><small>Single · R&amp;B</small></figcaption></figure>
+      <figure class="tcard reveal" data-video="testimonial-3.mp4"><img src="testimonial-3-poster.jpg" alt="" /><div class="play"><span></span></div><figcaption><b>Artist name</b><small>Remote · EDM</small></figcaption></figure>
+    </div>
+    <div class="cta-block reveal"><a class="btn btn--lg" href="#book" data-cta="testimonials">Claim your FREE session <span class="arrow">→</span></a><p class="cta-rea">Free · 30 minutes · Zoom or phone · No pressure</p></div>
+  </div>
+</section>
+
+<!-- VALUE STACK -->
+<section>
+  <div class="wrap">
+    <p class="plate eyebrow reveal">What you'll walk away with</p>
+    <h2 class="section-head reveal">Here's exactly what your free session covers.</h2>
+    <p class="lead reveal">No pitch deck, no hard sell — just real, usable direction for your music.</p>
+    <div class="stack">
+      <div class="stack-item reveal"><span class="ck">✓</span><p><b>An honest read on your current sound</b> — what's working and what's quietly holding your releases back.</p></div>
+      <div class="stack-item reveal"><span class="ck">✓</span><p><b>The reference gap</b> — what actually sits between your music and the artists you look up to.</p></div>
+      <div class="stack-item reveal"><span class="ck">✓</span><p><b>A simple plan for your next release or EP</b> — with a realistic timeline you can hold me to.</p></div>
+      <div class="stack-item reveal"><span class="ck">✓</span><p><b>A straight answer on fit</b> — whether I'm the right person to build this with you.</p></div>
+      <div class="stack-item reveal"><span class="ck">✓</span><p><b>Your options if we move forward</b> — including the Travalor Pack rate for ongoing collaborators.</p></div>
+    </div>
+    <div class="cta-block reveal"><a class="btn btn--lg" href="#book" data-cta="valuestack">Claim your FREE session <span class="arrow">→</span></a><p class="cta-rea">Free · 30 minutes · Zoom or phone · No pressure</p></div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="bg-2">
+  <div class="wrap">
+    <p class="plate eyebrow reveal">Just 3 steps</p>
+    <h2 class="section-head reveal">From scattered ideas to a sound you own.</h2>
+    <div class="steps">
+      <div class="step reveal"><p class="step__no">01 / Discovery</p><h3>The free session</h3><p>We talk vision, goals, references and what's gone wrong before — and figure out if we're the right fit to build this together.</p></div>
+      <div class="step reveal"><p class="step__no">02 / Blueprint</p><h3>Your plan &amp; packages</h3><p>I map your project to a clear scope, timeline and price — single, EP, or the Travalor Pack rate. You'll know exactly what you get and when.</p></div>
+      <div class="step reveal"><p class="step__no">03 / Build</p><h3>On schedule, your way</h3><p>We produce and mix under one roof — in studio or guided remotely — hitting the milestones we agreed, so you're releasing and booking shows.</p></div>
+    </div>
+    <div class="cta-block reveal"><a class="btn btn--lg" href="#book" data-cta="process">Claim your FREE session <span class="arrow">→</span></a><p class="cta-rea">Free · 30 minutes · Zoom or phone · No pressure</p></div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="book" id="book">
+  <div class="wrap">
+    <span class="scarcity reveal">Limited — only a few new artists taken each month</span>
+    <h2 class="section-head reveal">Claim your FREE 30-minute Artist Level-Up Session.</h2>
+    <p class="lead reveal">Takes under a minute. Tell me a little about you, then pick a time — Zoom or phone, your call.</p>
+  </div>
+
+  <div class="panel reveal" id="panel">
+    <div class="progress" id="prog"><i class="on"></i><i></i><i></i><i></i></div>
+    <form id="bookForm" autocomplete="on" novalidate>
+      <div class="qstep active" data-step="0">
+        <p class="qlabel">Where should I send your invite?</p>
+        <p class="qhint">This is where your calendar invite + session details land.</p>
+        <input class="field" type="email" id="f_email" placeholder="you@email.com" />
+        <div class="err" id="e0"></div>
+      </div>
+      <div class="qstep" data-step="1">
+        <p class="qlabel">And your name?</p>
+        <p class="qhint">So I know who I'm talking to.</p>
+        <input class="field" type="text" id="f_name" placeholder="Your name" />
+        <div class="err" id="e1"></div>
+      </div>
+      <div class="qstep" data-step="2">
+        <p class="qlabel">Best number to reach you?</p>
+        <p class="qhint">Include your country code — I work with artists internationally.</p>
+        <div class="phone-row">
+          <select class="field" id="f_code">
+            <option value="+1">+1 US/CA</option><option value="+44">+44 UK</option>
+            <option value="+61" selected>+61 AU</option><option value="+64">+64 NZ</option>
+            <option value="+353">+353 IE</option><option value="+49">+49 DE</option>
+            <option value="+33">+33 FR</option><option value="+34">+34 ES</option>
+            <option value="+39">+39 IT</option><option value="+31">+31 NL</option>
+            <option value="+46">+46 SE</option><option value="+27">+27 ZA</option>
+            <option value="+91">+91 IN</option><option value="+81">+81 JP</option>
+            <option value="+82">+82 KR</option><option value="+65">+65 SG</option>
+            <option value="+971">+971 AE</option><option value="+52">+52 MX</option>
+            <option value="+55">+55 BR</option><option value="+63">+63 PH</option>
+            <option value="+234">+234 NG</option><option value="other">Other</option>
+          </select>
+          <input class="field" type="tel" id="f_phone" placeholder="Phone number" />
+        </div>
+        <div class="err" id="e2"></div>
+      </div>
+      <div class="qstep" data-step="3">
+        <p class="qlabel">How do you want to connect?</p>
+        <p class="qhint">Pick whatever feels easiest.</p>
+        <div class="choice">
+          <button type="button" data-val="Zoom" id="c_zoom">Zoom video<small>Face to face</small></button>
+          <button type="button" data-val="Phone" id="c_phone">Phone call<small>Audio only</small></button>
+        </div>
+        <div class="err" id="e3"></div>
+      </div>
+      <div class="qnav">
+        <button type="button" class="back" id="backBtn" style="visibility:hidden">← Back</button>
+        <button type="button" class="btn" id="nextBtn">Continue <span class="arrow">→</span></button>
+      </div>
+    </form>
+
+    <div id="embedwrap" style="display:none">
+      <div class="prep-cta" id="prepCta">
+        <p class="qlabel" style="margin-bottom:.6rem">You're booked! 🎉 One quick thing…</p>
+        <p class="qhint" style="margin-bottom:1.1rem">Answer a few short questions so our call is actually useful — takes 2 minutes.</p>
+        <!-- ▸ EDIT: point this at prep.html wherever you host it -->
+        <a class="btn btn--lg" href="prep.html" data-cta="prep">Complete my pre-call questions <span class="arrow">→</span></a>
+      </div>
+      <p class="qlabel" id="pickLabel" style="margin-bottom:1rem">Last step — pick your time 👇</p>
+      <div id="cal-embed"><div class="embed-ph"><span class="plate">Calendar loads here</span><p>Your Calendly opens here, prefilled with their name &amp; email. They just pick a time.</p></div></div>
+      <div class="confirm">
+        <b>Important — your booking isn't confirmed yet.</b>
+        <ul>
+          <li>Check your email and <b>accept the calendar invite</b>. No acceptance = no confirmed session.</li>
+          <li>Not in your inbox? Check <b>spam / promotions</b>.</li>
+          <li>Add my email to your contacts so session details never get filtered.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEAD MAGNET -->
+<section>
+  <div class="wrap">
+    <div class="magnet reveal">
+      <p class="plate" style="margin-bottom:1rem">Not ready to book? Start here</p>
+      <h2>Get the free Studio-Ready Checklist.</h2>
+      <p>11 things most artists overlook before they walk into a studio — the small ones that quietly cost them thousands and slow their whole career down.</p>
+      <form id="magnetForm" novalidate>
+        <input class="field" type="email" id="m_email" placeholder="you@email.com" />
+        <button class="btn" type="button" id="m_btn" data-cta="magnet">Send it to me <span class="arrow">→</span></button>
+      </form>
+      <div class="err" id="m_err" style="text-align:center"></div>
+      <small>No spam. Just the checklist + the occasional thing worth your time.</small>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <a class="brand" href="#top">Trava<span style="color:var(--violet-soft)">lor</span></a>
+    <a href="mailto:you@travalor.com">you@travalor.com</a>
+    <a href="https://instagram.com/yourhandle" target="_blank" rel="noopener">@yourhandle</a>
+    <a href="#book">Claim your FREE session</a>
+  </div>
+</footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true">
+  <div style="position:relative;width:min(900px,100%)">
+    <button class="lb__close" id="lbClose">Close ✕</button>
+    <div class="lb__inner" id="lbInner"></div>
+  </div>
+</div>
+
+<script>
+  function track(n,p){try{if(window.gtag)gtag('event',n,p||{});}catch(e){}}
+  document.querySelectorAll('[data-cta]').forEach(function(el){el.addEventListener('click',function(){track('cta_click',{location:el.getAttribute('data-cta')});});});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(function(el,i){el.style.transitionDelay=(i%4)*60+'ms';io.observe(el);});
+
+  var lb=document.getElementById('lb'),lbInner=document.getElementById('lbInner');
+  document.querySelectorAll('.tcard').forEach(function(c){c.addEventListener('click',function(){
+    lbInner.innerHTML='<video src="'+c.getAttribute('data-video')+'" controls autoplay playsinline></video>';
+    lb.classList.add('open');track('testimonial_play');});});
+  function closeLb(){lb.classList.remove('open');lbInner.innerHTML='';}
+  document.getElementById('lbClose').addEventListener('click',closeLb);
+  lb.addEventListener('click',function(e){if(e.target===lb)closeLb();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLb();});
+
+  var step=0,total=4,channel='',emailSent=false,completed=false;
+  var steps=document.querySelectorAll('.qstep'),prog=document.getElementById('prog').children;
+  var nextBtn=document.getElementById('nextBtn'),backBtn=document.getElementById('backBtn');
+  var emailRe=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  function val(id){return document.getElementById(id).value.trim();}
+  document.getElementById('c_zoom').addEventListener('click',function(){pick(this,'Zoom');});
+  document.getElementById('c_phone').addEventListener('click',function(){pick(this,'Phone');});
+  function pick(b,v){channel=v;document.querySelectorAll('.choice button').forEach(function(x){x.classList.remove('sel');});b.classList.add('sel');document.getElementById('e3').textContent='';}
+  function lead(status){return {email:val('f_email'),name:val('f_name'),phone:(document.getElementById('f_code').value+' '+val('f_phone')).trim(),channel:channel,status:status};}
+  function saveLead(status){var data=lead(status);
+    /* ▸ EDIT LEAD ENDPOINT — POST to your webhook (records lead + can fire congrats SMS). status: partial/complete/abandoned.
+    fetch('https://YOUR-ENDPOINT',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}); */
+    return data;}
+  function show(n){steps.forEach(function(s){s.classList.toggle('active',+s.dataset.step===n);});
+    for(var i=0;i<total;i++){prog[i].classList.toggle('on',i<=n);}
+    backBtn.style.visibility=n===0?'hidden':'visible';
+    nextBtn.firstChild.nodeValue=n===total-1?'Confirm & pick a time ':'Continue ';
+    var inp=steps[n].querySelector('input');if(inp)setTimeout(function(){inp.focus();},60);}
+  function validate(n){var err=document.getElementById('e'+n);err.textContent='';
+    if(n===0&&!emailRe.test(val('f_email'))){err.textContent='That email doesn\'t look right — mind checking it?';return false;}
+    if(n===1&&!val('f_name')){err.textContent='Pop your name in so I know who I\'m talking to.';return false;}
+    if(n===2&&val('f_phone').replace(/\D/g,'').length<6){err.textContent='Add a number I can actually reach you on.';return false;}
+    if(n===3&&!channel){err.textContent='Pick Zoom or phone.';return false;}
+    return true;}
+  nextBtn.addEventListener('click',function(){
+    if(!validate(step))return;
+    if(step===0&&!emailSent){emailSent=true;saveLead('partial');track('lead_captured',{});}
+    else if(step<total-1){saveLead('partial');}
+    track('discovery_step',{step:step});
+    if(step<total-1){step++;show(step);}else{finish();}});
+  backBtn.addEventListener('click',function(){if(step>0){step--;show(step);}});
+  document.getElementById('bookForm').addEventListener('keydown',function(e){if(e.key==='Enter'&&step<total-1){e.preventDefault();nextBtn.click();}});
+
+  function finish(){
+    completed=true;saveLead('complete');track('discovery_form_complete',{channel:channel});
+    document.getElementById('bookForm').style.display='none';
+    document.getElementById('prog').style.display='none';
+    document.getElementById('embedwrap').style.display='block';
+    var CAL_URL='https://calendly.com/travalor/30min';
+    if(window.Calendly){
+      document.getElementById('cal-embed').innerHTML='';
+      Calendly.initInlineWidget({url:CAL_URL,parentElement:document.getElementById('cal-embed'),
+        prefill:{name:val('f_name'),email:val('f_email'),customAnswers:{a1:lead('complete').phone}}});
     }
-    ];
+    document.getElementById('embedwrap').scrollIntoView({behavior:'smooth',block:'center'});
+  }
+  show(0);
 
-    function track(n, p) {
-        try {
-            if (window.gtag)
-                gtag('event', n, p || {});
-        } catch (e) {}
-    }
+  function beacon(){if(emailSent&&!completed){track('lead_abandoned',{step:step});
+    /* if(navigator.sendBeacon)navigator.sendBeacon('https://YOUR-ENDPOINT',new Blob([JSON.stringify(lead('abandoned'))],{type:'application/json'})); */}}
+  document.addEventListener('visibilitychange',function(){if(document.visibilityState==='hidden')beacon();});
 
-    /* render testimonials */
-    var tgrid = document.getElementById('tgrid');
-    TESTIMONIALS.forEach(function(t) {
-        var fig = document.createElement('figure');
-        fig.className = 'tcard reveal';
-        fig.setAttribute('data-id', t.id);
-        fig.innerHTML = '<img loading="lazy" src="https://i.ytimg.com/vi/' + t.id + '/hqdefault.jpg" alt="' + t.name + ' testimonial" />' +
-        '<div class="play"><span></span></div>' +
-        '<figcaption><b>' + t.name + '</b><small>' + (t.tag || '') + '</small></figcaption>';
-        tgrid.appendChild(fig);
-    });
+  /* confirmed booking → fire conversion + reveal the pre-call questionnaire CTA */
+  window.addEventListener('message',function(e){
+    if(e.data&&e.data.event==='calendly.event_scheduled'){
+      track('booking_confirmed');
+      document.getElementById('prepCta').classList.add('show');
+      document.getElementById('pickLabel').style.display='none';
+    }});
 
-    /* analytics on CTAs */
-    document.querySelectorAll('[data-cta]').forEach(function(el) {
-        el.addEventListener('click', function() {
-            track('cta_click', {
-                location: el.getAttribute('data-cta')
-            });
-        });
-    });
-
-    /* scroll reveal (after testimonials are in the DOM) */
-    var io = new IntersectionObserver(function(es) {
-        es.forEach(function(e) {
-            if (e.isIntersecting) {
-                e.target.classList.add('in');
-                io.unobserve(e.target);
-            }
-        });
-    }, {
-        threshold: 0.12
-    });
-    document.querySelectorAll('.reveal').forEach(function(el, i) {
-        el.style.transitionDelay = (i % 4) * 60 + 'ms';
-        io.observe(el);
-    });
-
-    /* testimonial carousel — plays in-page (youtube-nocookie + referrerpolicy fixes error 153) */
-    var lb = document.getElementById('lb'),
-        lbInner = document.getElementById('lbInner'),
-        lbName = document.getElementById('lbName'),
-        lbCount = document.getElementById('lbCount'),
-        cur = 0;
-    function playT(i) {
-        cur = (i + TESTIMONIALS.length) % TESTIMONIALS.length; /* wraps around */
-        var t = TESTIMONIALS[cur];
-        lbInner.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + t.id +
-        '?autoplay=1&rel=0&playsinline=1&modestbranding=1" referrerpolicy="strict-origin-when-cross-origin" ' +
-        'allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
-        lbName.textContent = t.name;
-        lbCount.textContent = (cur + 1) + ' / ' + TESTIMONIALS.length;
-        lb.classList.add('open');
-        track('testimonial_play', {
-            id: t.id
-        });
-    }
-    document.querySelectorAll('.tcard').forEach(function(c) {
-        c.addEventListener('click', function() {
-            var id = c.getAttribute('data-id'),
-                idx = 0;
-            TESTIMONIALS.forEach(function(t, k) {
-                if (t.id === id)
-                    idx = k;
-            });
-            playT(idx);
-        });
-    });
-    function closeLb() {
-        lb.classList.remove('open');
-        lbInner.innerHTML = '';
-    }
-    document.getElementById('lbClose').addEventListener('click', closeLb);
-    document.getElementById('lbPrev').addEventListener('click', function() {
-        playT(cur - 1);
-    });
-    document.getElementById('lbNext').addEventListener('click', function() {
-        playT(cur + 1);
-    });
-    lb.addEventListener('click', function(e) {
-        if (e.target === lb)
-            closeLb();
-    });
-    document.addEventListener('keydown', function(e) {
-        if (!lb.classList.contains('open'))
-            return;
-        if (e.key === 'Escape')
-            closeLb();
-        if (e.key === 'ArrowRight')
-            playT(cur + 1);
-        if (e.key === 'ArrowLeft')
-            playT(cur - 1);
-    });
-
-    /* ---- multistep, progressive-capture booking form ---- */
-    var step = 0,
-        total = 5,
-        channel = '',
-        emailSent = false,
-        completed = false,
-        userMoved = false;
-    var steps = document.querySelectorAll('.qstep'),
-        prog = document.getElementById('prog').children;
-    var nextBtn = document.getElementById('nextBtn'),
-        backBtn = document.getElementById('backBtn');
-    var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    function val(id) {
-        return document.getElementById(id).value.trim();
-    }
-
-    document.getElementById('c_zoom').addEventListener('click', function() {
-        pick(this, 'Zoom');
-    });
-    document.getElementById('c_phone').addEventListener('click', function() {
-        pick(this, 'Phone');
-    });
-    function pick(b, v) {
-        channel = v;
-        document.querySelectorAll('.choice button').forEach(function(x) {
-            x.classList.remove('sel');
-        });
-        b.classList.add('sel');
-        document.getElementById('e3').textContent = '';
-    }
-
-    /* show "who referred you" only when referral picked */
-    document.getElementById('f_ref').addEventListener('change', function() {
-        var who = document.getElementById('f_refwho');
-        who.style.display = this.value.indexOf('referred') > -1 ? 'block' : 'none';
-    });
-
-    function lead(status) {
-        return {
-            email: val('f_email'),
-            name: val('f_name'),
-            phone: (document.getElementById('f_code').value + ' ' + val('f_phone')).trim(),
-            channel: channel,
-            referralSource: val('f_ref'),
-            referredBy: val('f_refwho'),
-            status: status
-        };
-    }
-
-    function saveLead(status) {
-        var data = lead(status);
-        if (LEAD_ENDPOINT) {
-            try {
-                fetch(LEAD_ENDPOINT, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(data),
-                    keepalive: true
-                });
-            } catch (e) {}
-        }
-        return data;
-    }
-
-    function show(n) {
-        steps.forEach(function(s) {
-            s.classList.toggle('active', +s.dataset.step === n);
-        });
-        for (var i = 0; i < total; i++) {
-            prog[i].classList.toggle('on', i <= n);
-        }
-        backBtn.style.visibility = n === 0 ? 'hidden' : 'visible';
-        nextBtn.firstChild.nodeValue = n === total - 1 ? 'Confirm & pick a time ' : 'Continue ';
-        var inp = steps[n].querySelector('input');
-        if (inp && userMoved)
-            setTimeout(function() {
-                inp.focus({
-                    preventScroll: true
-                });
-            }, 60);
-    }
-
-    function validate(n) {
-        var err = document.getElementById('e' + n);
-        err.textContent = '';
-        if (n === 0 && !emailRe.test(val('f_email'))) {
-            err.textContent = 'That email doesn\'t look right — mind checking it?';
-            return false;
-        }
-        if (n === 1 && !val('f_name')) {
-            err.textContent = 'Pop your name in so I know who I\'m talking to.';
-            return false;
-        }
-        if (n === 2 && val('f_phone').replace(/\D/g, '').length < 6) {
-            err.textContent = 'Add a number I can actually reach you on.';
-            return false;
-        }
-        if (n === 3 && !channel) {
-            err.textContent = 'Pick Zoom or phone.';
-            return false;
-        }
-        if (n === 4 && !val('f_ref')) {
-            err.textContent = 'Pick one so I know where you came from.';
-            return false;
-        }
-        return true;
-    }
-
-    nextBtn.addEventListener('click', function() {
-        if (!validate(step))
-            return;
-        userMoved = true;
-        if (step === 0 && !emailSent) {
-            emailSent = true;
-            track('lead_captured', {});
-        }
-        /* note: we no longer POST on every step — only ONE clean send happens at finish()
-               (and the abandon beacon fires only if they leave after entering their email),
-               so each person becomes exactly one Airtable row. */
-        track('discovery_step', {
-            step: step
-        });
-        if (step < total - 1) {
-            step++;
-            show(step);
-        } else {
-            finish();
-        }
-    });
-    backBtn.addEventListener('click', function() {
-        if (step > 0) {
-            userMoved = true;
-            step--;
-            show(step);
-        }
-    });
-    document.getElementById('bookForm').addEventListener('keydown', function(e) {
-        if (e.key === 'Enter' && step < total - 1) {
-            e.preventDefault();
-            nextBtn.click();
-        }
-    });
-
-    function finish() {
-        completed = true;
-        saveLead('complete');
-        track('discovery_form_complete', {
-            channel: channel
-        });
-        document.getElementById('bookForm').style.display = 'none';
-        document.getElementById('prog').style.display = 'none';
-        document.getElementById('embedwrap').style.display = 'block';
-        var CAL_URL = 'https://calendly.com/travalor/30min';
-        if (window.Calendly) {
-            document.getElementById('cal-embed').innerHTML = '';
-            Calendly.initInlineWidget({
-                url: CAL_URL,
-                parentElement: document.getElementById('cal-embed'),
-                prefill: {
-                    name: val('f_name'),
-                    email: val('f_email'),
-                    customAnswers: {
-                        a1: lead('complete').phone
-                    }
-                }
-            });
-        }
-        document.getElementById('embedwrap').scrollIntoView({
-            behavior: 'smooth',
-            block: 'center'
-        });
-    }
-    show(0);
-
-    function beacon() {
-        if (emailSent && !completed) {
-            track('lead_abandoned', {
-                step: step
-            });
-            if (LEAD_ENDPOINT && navigator.sendBeacon)
-                navigator.sendBeacon(LEAD_ENDPOINT, new Blob([JSON.stringify(lead('abandoned'))], {
-                    type: 'application/json'
-                }));
-        }
-    }
-    document.addEventListener('visibilitychange', function() {
-        if (document.visibilityState === 'hidden')
-            beacon();
-    });
-
-    window.addEventListener('message', function(e) {
-        if (e.data && e.data.event === 'calendly.event_scheduled') {
-            track('booking_confirmed');
-            document.getElementById('prepCta').classList.add('show');
-            document.getElementById('pickLabel').style.display = 'none';
-            var tz = document.getElementById('tzNote');
-            if (tz)
-                tz.style.display = 'none';
-        }
-    });
-
-    document.getElementById('m_btn').addEventListener('click', function() {
-        var em = val('m_email'),
-            err = document.getElementById('m_err');
-        if (!emailRe.test(em)) {
-            err.style.color = 'var(--gold-soft)';
-            err.textContent = 'Enter a valid email and the checklist is yours.';
-            return;
-        }
-        track('lead_magnet', {});
-        if (LEAD_ENDPOINT) {
-            try {
-                fetch(LEAD_ENDPOINT, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        email: em,
-                        source: 'checklist',
-                        status: 'lead_magnet'
-                    }),
-                    keepalive: true
-                });
-            } catch (e) {}
-        }
-        /* instant delivery: open the PDF in a new tab so they get it right away */
-        var a = document.createElement('a');
-        a.href = CHECKLIST_FILE;
-        a.target = '_blank';
-        a.rel = 'noopener';
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-        err.style.color = 'var(--violet-soft)';
-        err.textContent = 'Done! Your checklist just opened in a new tab — I\'ve also got it ready for your inbox.';
-        document.getElementById('m_email').value = '';
-    });
-    </script>
+  document.getElementById('m_btn').addEventListener('click',function(){
+    var em=val('m_email'),err=document.getElementById('m_err');
+    if(!emailRe.test(em)){err.style.color='var(--gold-soft)';err.textContent='Enter a valid email and the checklist is yours.';return;}
+    track('lead_magnet',{});
+    err.style.color='var(--violet-soft)';err.textContent='Sent! Check your inbox (and spam) for the checklist.';
+    document.getElementById('m_email').value='';});
+</script>
 </body>
 </html>
