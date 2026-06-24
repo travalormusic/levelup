@@ -242,7 +242,7 @@
      the whole site starts sending leads (booking form + abandons + checklist).
      ==================================================================== -->
 <script>
-  var LEAD_ENDPOINT  = "https://hook.us2.make.com/iga72fg9gbkn64x9kld0m9caoic5hztj";                            /* PASTE your Make webhook URL here, e.g. "https://hook.us2.make.com/abc123" */
+  var LEAD_ENDPOINT  = "";                            /* PASTE your Make webhook URL here, e.g. "https://hook.us2.make.com/abc123" */
   var CHECKLIST_FILE = "Studio-Ready-Checklist.pdf";  /* name your PDF exactly this, in the same folder */
 </script>
 
@@ -654,6 +654,7 @@
 
   function finish(){
     completed=true;saveLead('complete');track('discovery_form_complete',{channel:channel});
+    var nm=val('f_name'), em=val('f_email'), ph=lead('complete').phone;   /* capture BEFORE hiding the form */
     document.getElementById('bookForm').style.display='none';
     document.getElementById('prog').style.display='none';
     document.getElementById('embedwrap').style.display='block';
@@ -664,7 +665,7 @@
       setTimeout(function(){
         document.getElementById('cal-embed').innerHTML='';
         Calendly.initInlineWidget({url:CAL_URL,parentElement:document.getElementById('cal-embed'),
-          prefill:{name:val('f_name'),email:val('f_email'),customAnswers:{a1:lead('complete').phone}}});
+          prefill:{name:nm,firstName:nm.split(' ')[0],lastName:nm.split(' ').slice(1).join(' '),email:em,customAnswers:{a1:ph}}});
       },400);
     }
   }
